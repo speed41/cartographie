@@ -1,0 +1,25 @@
+{
+    "objet": [
+        {
+            "Nom": "Banc d'essai",
+            "Détail": "undefined",
+            "Secteur": "Perfo",
+            "type": "combine",
+            "couleur": "b4b1b1",
+            "x0": "42.1875",
+            "y0": "2.6362038664323375",
+            "x1": "92.1875",
+            "y1": "27.592267135325134",
+            "objets": [
+                {
+                    "Nom": "DLGRHQLQ2",
+                    "FormatObjet": "Ordinateur",
+                    "Secteur": "Perfo",
+                    "Détail": "undefined",
+                    "x": 1968,
+                    "y": 1968
+                }
+            ]
+        }
+    ]
+}

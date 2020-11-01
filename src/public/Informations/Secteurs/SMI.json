@@ -1,0 +1,17 @@
+{
+    "SMI": 
+        {
+            "Nom": "{Nom}<br>(Secteur :<tab>{Secteur})",
+			"Hint": "Nom :<tab>{Nom}<br>Secteur :<tab>{Secteur}<br>Détail :<tab>{Détail}"
+        },
+	"Moteur": 
+        {
+            "Nom": "{Nom}",
+			"Hint": "Hostname = {Nom}<br>Détail : {Détail}<br>Secteur : {Secteur}"
+        },
+    "Perfo": 
+        {
+            "Nom": "{Nom}",
+			"Hint": "Hostname = {Nom}<br>Détail : {Détail}<br>Secteur : {Secteur}"
+        }
+}

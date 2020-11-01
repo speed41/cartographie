@@ -1,0 +1,189 @@
+{
+    "Flags": [
+        {
+            "Titre": "OS",
+            "Détail": "Système d'exploitation",
+            "Chemin": "C:\\cartographie\\Tests",
+            "Fichier": "infos.txt",
+            "Vu": "ok.png",
+            "HostnameOuVariable": "~hostname~",
+            "PasVu": "nok.png",
+            "variable": "toto",
+            "Type": "DansFichierTxt",
+            "Calcul": {
+                "ValeurA": "10",
+                "ValeurB": "20",
+                "ValeurC": "20",
+                "ImageEgaleA": "",
+                "ImageEgaleB": "",
+                "ImageSuperieurC": "",
+                "CouleurInfEgaleA": "0000ff",
+                "CouleurInfEgaleB": "ffffff",
+                "CouleurSuperieurC": "ff0000",
+                "Contient": "win 2000.png/Win XP.png/Win 7.png/Win 10.png/win server 2008.jpg",
+                "ColonneResultat": "3",
+                "TypeCalcul": "Contient"
+            },
+            "Texte": {
+                "Separateur": "tab"
+            },
+            "Excel": {
+                "Onglet": "toto",
+                "HostnameColonne": "1"
+            }
+        },
+        {
+            "Titre": "nb fichiers",
+            "Détail": "combien de fichiers présents",
+            "Chemin": "C:\\cartographie\\Tests",
+            "Fichier": "*.png",
+            "Vu": "ok.png",
+            "HostnameOuVariable": "~hostname~",
+            "PasVu": "acronis3.png",
+            "variable": "hostname",
+            "Type": "FichierPresent",
+            "Calcul": {
+                "ValeurA": "2",
+                "ValeurB": "5",
+                "ValeurC": "5",
+                "ImageEgaleA": "acronis0.png",
+                "ImageEgaleB": "acronis1.png",
+                "ImageSuperieurC": "acronis2.png",
+                "CouleurInfEgaleA": "00ff00",
+                "CouleurInfEgaleB": "ffff00",
+                "CouleurSuperieurC": "ff0000",
+                "Contient": "",
+                "ColonneResultat": "",
+                "TypeCalcul": "Occurences"
+            },
+            "Texte": {
+                "Separateur": ""
+            },
+            "Excel": {
+                "Onglet": "document.getElementById(\"indicateurOnglet\").value",
+                "HostnameColonne": ""
+            }
+        },
+        {
+            "Titre": "Acronis",
+            "Détail": "présent",
+            "Chemin": "C:\\cartographie\\Tests",
+            "Fichier": ".png",
+            "Vu": "ok.png",
+            "HostnameOuVariable": "~hostname~",
+            "PasVu": "acronis3.png",
+            "variable": "hostname",
+            "Type": "FichierPresent",
+            "Calcul": {
+                "ValeurA": "1",
+                "ValeurB": "2",
+                "ValeurC": "3",
+                "ImageEgaleA": "acronis0.png",
+                "ImageEgaleB": "acronis1.png",
+                "ImageSuperieurC": "acronis2.png",
+                "CouleurInfEgaleA": "0000ff",
+                "CouleurInfEgaleB": "ffffff",
+                "CouleurSuperieurC": "ff0000",
+                "Contient": "",
+                "ColonneResultat": "",
+                "TypeCalcul": "EcartAnnee"
+            },
+            "Texte": {
+                "Separateur": ""
+            },
+            "Excel": {
+                "Onglet": "document.getElementById(\"indicateurOnglet\").value",
+                "HostnameColonne": ""
+            }
+        },
+        {
+            "Titre": "Nb DT",
+            "Détail": "Holistech",
+            "Chemin": "C:\\cartographie\\Tests",
+            "Fichier": "infos.txt",
+            "Vu": "",
+            "HostnameOuVariable": "~hostname~",
+            "PasVu": "",
+            "variable": "hostname",
+            "Type": "DansFichierTxt",
+            "Calcul": {
+                "ValeurA": "26",
+                "ValeurB": "50",
+                "ValeurC": "50",
+                "ImageEgaleA": "",
+                "ImageEgaleB": "",
+                "ImageSuperieurC": "",
+                "CouleurInfEgaleA": "00ff08",
+                "CouleurInfEgaleB": "a8a6f7",
+                "CouleurSuperieurC": "fda5a5",
+                "Contient": "",
+                "ColonneResultat": "4",
+                "TypeCalcul": "Valeur"
+            },
+            "Texte": {
+                "Separateur": "tab"
+            },
+            "Excel": {
+                "Onglet": "document.getElementById(\"indicateurOnglet\").value",
+                "HostnameColonne": ""
+            }
+        },
+        {
+            "Titre": "mon OS",
+            "Détail": "suivant variable ID OS",
+            "Chemin": "C:\\cartographie\\Tests",
+            "Fichier": "plus.txt",
+            "Vu": "",
+            "HostnameOuVariable": "ID OS",
+            "PasVu": "",
+            "variable": "ID OS",
+            "Type": "DansFichierTxt",
+            "Calcul": {
+                "ValeurA": "",
+                "ValeurB": "",
+                "ValeurC": "",
+                "ImageEgaleA": "",
+                "ImageEgaleB": "",
+                "ImageSuperieurC": "",
+                "CouleurInfEgaleA": "0000ff",
+                "CouleurInfEgaleB": "ffffff",
+                "CouleurSuperieurC": "ff0000",
+                "Contient": "win 2000.png/Win XP.png/Win 7.png/Win 10.png/win server 2008.jpg",
+                "ColonneResultat": "2",
+                "TypeCalcul": "Contient"
+            },
+            "Texte": {
+                "Separateur": "tab"
+            },
+            "Excel": {
+                "Onglet": "document.getElementById(\"indicateurOnglet\").value",
+                "HostnameColonne": ""
+            }
+        }
+    ],
+    "Variables": [
+        {
+            "Titre": "ID OS",
+            "Détail": "OS revu",
+            "Chemin": "C:\\cartographie\\Tests",
+            "Fichier": "infos.txt",
+            "Vu": "",
+            "HostnameOuVariable": "~hostname~",
+            "PasVu": "",
+            "variable": "hostname",
+            "Type": "DansFichierTxt",
+            "Calcul": {
+                "Contient": "",
+                "ColonneResultat": "5",
+                "TypeCalcul": "Valeur"
+            },
+            "Texte": {
+                "Separateur": "tab"
+            },
+            "Excel": {
+                "Onglet": "document.getElementById(\"indicateurOnglet\").value",
+                "HostnameColonne": ""
+            }
+        }
+    ]
+}

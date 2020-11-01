@@ -1,0 +1,451 @@
+{
+    "objet": [
+        {
+            "Nom": "PF A",
+            "Détail": "Plateforme Moteur",
+            "Secteur": "Moteur",
+            "type": "combine",
+            "couleur": "b4b1b1",
+            "x0": "0",
+            "y0": "10",
+            "x1": "8",
+            "y1": "65",
+            "objets": [
+                {
+                    "Nom": "FRBLOCTMAecu",
+                    "FormatObjet": "Ordinateur",
+                    "Secteur": "Moteur",
+                    "Détail": "Visu",
+                    "x": 1968,
+                    "y": 1968
+                },
+                {
+                    "Nom": "FRBLOCTMAaut",
+                    "FormatObjet": "Ordinateur",
+                    "Secteur": "Moteur",
+                    "Détail": "Puma",
+                    "x": 1968,
+                    "y": 1968
+                },
+                {
+                    "Nom": "FRBLOCTMAind",
+                    "FormatObjet": "Ordinateur",
+                    "Secteur": "Moteur",
+                    "Détail": "Osiris",
+                    "x": 1968,
+                    "y": 1968
+                }
+            ]
+        },
+        {
+            "Nom": "PF B",
+            "Détail": "Plateforme Moteur",
+            "Secteur": "Moteur",
+            "type": "combine",
+            "couleur": "d6e326",
+            "x0": "7.968749999999999",
+            "y0": "9.895833333333332",
+            "x1": "15.989583333333332",
+            "y1": "64.97395833333334",
+            "objets": [
+                {
+                    "Nom": "FRBLOCTMBecu",
+                    "FormatObjet": "Ordinateur",
+                    "Secteur": "Moteur",
+                    "Détail": "Visu",
+                    "x": 1968,
+                    "y": 1968
+                },
+                {
+                    "Nom": "FRBLOCTMBaut",
+                    "FormatObjet": "Ordinateur",
+                    "Secteur": "Moteur",
+                    "Détail": "Puma",
+                    "x": 1968,
+                    "y": 1968
+                },
+                {
+                    "Nom": "FRBLOCTMBind",
+                    "FormatObjet": "Ordinateur",
+                    "Secteur": "Moteur",
+                    "Détail": "Osiris",
+                    "x": 1968,
+                    "y": 1968
+                }
+            ]
+        },
+        {
+            "Nom": "PF C",
+            "Détail": "Plateforme Moteur",
+            "Secteur": "Moteur",
+            "type": "combine",
+            "couleur": "b4b1b1",
+            "x0": "15.95900439238653",
+            "y0": "9.89010989010989",
+            "x1": "23.938506588579795",
+            "y1": "64.83516483516483",
+            "objets": [
+                {
+                    "Nom": "FRBLOCTMCecu",
+                    "FormatObjet": "Ordinateur",
+                    "Secteur": "Moteur",
+                    "Détail": "Visu",
+                    "x": 1968,
+                    "y": 1968
+                },
+                {
+                    "Nom": "FRBLOCTMCaut",
+                    "FormatObjet": "Ordinateur",
+                    "Secteur": "Moteur",
+                    "Détail": "Puma",
+                    "x": 1968,
+                    "y": 1968
+                },
+                {
+                    "Nom": "FRBLOCTMCind",
+                    "FormatObjet": "Ordinateur",
+                    "Secteur": "Moteur",
+                    "Détail": "Osiris",
+                    "x": 1968,
+                    "y": 1968
+                }
+            ]
+        },
+        {
+            "Nom": "PF D",
+            "Détail": "Plateforme Moteur",
+            "Secteur": "Moteur",
+            "type": "combine",
+            "couleur": "b4b1b1",
+            "x0": "24",
+            "y0": "10",
+            "x1": "32",
+            "y1": "65",
+            "objets": [
+                {
+                    "Nom": "FRBLOCTMDecu",
+                    "FormatObjet": "Ordinateur",
+                    "Secteur": "Moteur",
+                    "Détail": "Visu",
+                    "x": 1968,
+                    "y": 1968
+                },
+                {
+                    "Nom": "FRBLOCTMDaut",
+                    "FormatObjet": "Ordinateur",
+                    "Secteur": "Moteur",
+                    "Détail": "Puma",
+                    "x": 1968,
+                    "y": 1968
+                },
+                {
+                    "Nom": "FRBLOCTMDind",
+                    "FormatObjet": "Ordinateur",
+                    "Secteur": "Moteur",
+                    "Détail": "Osiris",
+                    "x": 1968,
+                    "y": 1968
+                }
+            ]
+        },
+        {
+            "Nom": "PF E",
+            "Détail": "Plateforme Moteur",
+            "Secteur": "Moteur",
+            "type": "combine",
+            "couleur": "f7a1bb",
+            "x0": "32",
+            "y0": "10",
+            "x1": "40",
+            "y1": "65",
+            "objets": [
+                {
+                    "Nom": "FRBLOCTMEecu",
+                    "FormatObjet": "Ordinateur",
+                    "Secteur": "Moteur",
+                    "Détail": "Visu",
+                    "x": 1968,
+                    "y": 1968
+                },
+                {
+                    "Nom": "FRBLOCTMEaut",
+                    "FormatObjet": "Ordinateur",
+                    "Secteur": "Moteur",
+                    "Détail": "Puma",
+                    "x": 1968,
+                    "y": 1968
+                },
+                {
+                    "Nom": "FRBLOCTMEind",
+                    "FormatObjet": "Ordinateur",
+                    "Secteur": "Moteur",
+                    "Détail": "Osiris",
+                    "x": 1968,
+                    "y": 1968
+                }
+            ]
+        },
+        {
+            "Nom": "PF F",
+            "Détail": "Plateforme Moteur",
+            "Secteur": "Moteur",
+            "type": "combine",
+            "couleur": "cd0e0e",
+            "x0": "39.751098096632504",
+            "y0": "9.706959706959708",
+            "x1": "47.950219619326504",
+            "y1": "64.83516483516483",
+            "objets": [
+                {
+                    "Nom": "FRBLOCTMFecu",
+                    "FormatObjet": "Ordinateur",
+                    "Secteur": "Moteur",
+                    "Détail": "Visu",
+                    "x": 1968,
+                    "y": 1968
+                },
+                {
+                    "Nom": "FRBLOCTMFaut",
+                    "FormatObjet": "Ordinateur",
+                    "Secteur": "Moteur",
+                    "Détail": "Puma",
+                    "x": 1968,
+                    "y": 1968
+                },
+                {
+                    "Nom": "FRBLOCTMFind",
+                    "FormatObjet": "Ordinateur",
+                    "Secteur": "Moteur",
+                    "Détail": "Osiris",
+                    "x": 1968,
+                    "y": 1968
+                }
+            ]
+        },
+        {
+            "Nom": "PF G",
+            "Détail": "Plateforme Moteur",
+            "Secteur": "Moteur",
+            "type": "combine",
+            "couleur": "b4b1b1",
+            "x0": "47.950219619326504",
+            "y0": "9.89010989010989",
+            "x1": "55.92972181551976",
+            "y1": "64.83516483516483",
+            "objets": [
+                {
+                    "Nom": "FRBLOCTMGecu",
+                    "FormatObjet": "Ordinateur",
+                    "Secteur": "Moteur",
+                    "Détail": "Visu",
+                    "x": 1968,
+                    "y": 1968
+                },
+                {
+                    "Nom": "FRBLOCTMGaut",
+                    "FormatObjet": "Ordinateur",
+                    "Secteur": "Moteur",
+                    "Détail": "Puma",
+                    "x": 1968,
+                    "y": 1968
+                },
+                {
+                    "Nom": "FRBLOCTMGind",
+                    "FormatObjet": "Ordinateur",
+                    "Secteur": "Moteur",
+                    "Détail": "Osiris",
+                    "x": 1968,
+                    "y": 1968
+                }
+            ]
+        },
+        {
+            "Nom": "PF H",
+            "Détail": "Plateforme Moteur",
+            "Secteur": "Moteur",
+            "type": "combine",
+            "couleur": "b0a5f8",
+            "image": "",
+            "pasDeTitre": "false",
+            "x0": "55.82437275985663",
+            "y0": "9.865470852017937",
+            "x1": "63.97849462365591",
+            "y1": "64.79820627802691",
+            "objets": [
+                {
+                    "Nom": "FRBLOCTMHecu",
+                    "FormatObjet": "Ordinateur",
+                    "Secteur": "Moteur",
+                    "Détail": "Visu",
+                    "x": 1968,
+                    "y": 1968
+                },
+                {
+                    "Nom": "FRBLOCTMHaut",
+                    "FormatObjet": "Ordinateur",
+                    "Secteur": "Moteur",
+                    "Détail": "Puma",
+                    "x": 1968,
+                    "y": 1968
+                },
+                {
+                    "Nom": "FRBLOCTMHind",
+                    "FormatObjet": "Ordinateur",
+                    "Secteur": "Moteur",
+                    "Détail": "Osiris",
+                    "x": 1968,
+                    "y": 1968
+                }
+            ]
+        },
+        {
+            "Nom": "PF I",
+            "Détail": "Plateforme Moteur",
+            "Secteur": "Moteur",
+            "type": "combine",
+            "couleur": "7192f4",
+            "x0": "64",
+            "y0": "10",
+            "x1": "72",
+            "y1": "65",
+            "pasDeTitre": "false",
+            "objets": [
+                {
+                    "Nom": "FRBLOCTMIecu",
+                    "FormatObjet": "Ordinateur",
+                    "Secteur": "Moteur",
+                    "Détail": "Visu",
+                    "x": 1968,
+                    "y": 1968
+                },
+                {
+                    "Nom": "FRBLOCTMIaut",
+                    "FormatObjet": "Ordinateur",
+                    "Secteur": "Moteur",
+                    "Détail": "Puma",
+                    "x": 1968,
+                    "y": 1968
+                },
+                {
+                    "Nom": "FRBLOCTMIind",
+                    "FormatObjet": "Ordinateur",
+                    "Secteur": "Moteur",
+                    "Détail": "Osiris",
+                    "x": 1968,
+                    "y": 1968
+                }
+            ]
+        },
+        {
+            "Nom": "PF J",
+            "Détail": "Plateforme Moteur",
+            "Secteur": "Moteur",
+            "type": "combine",
+            "couleur": "67c171",
+            "x0": "71.97916666666667",
+            "y0": "9.895833333333332",
+            "x1": "80",
+            "y1": "64.97395833333334",
+            "objets": [
+                {
+                    "Nom": "FRBLOCTMJecu",
+                    "FormatObjet": "Ordinateur",
+                    "Secteur": "Moteur",
+                    "Détail": "Visu",
+                    "x": 1968,
+                    "y": 1968
+                },
+                {
+                    "Nom": "FRBLOCTMJaut",
+                    "FormatObjet": "Ordinateur",
+                    "Secteur": "Moteur",
+                    "Détail": "Puma",
+                    "x": 1968,
+                    "y": 1968
+                },
+                {
+                    "Nom": "FRBLOCTMJind",
+                    "FormatObjet": "Ordinateur",
+                    "Secteur": "Moteur",
+                    "Détail": "Osiris",
+                    "x": 1968,
+                    "y": 1968
+                }
+            ]
+        },
+        {
+            "Nom": "PF K",
+            "Détail": "Plateforme Moteur",
+            "Secteur": "Moteur",
+            "type": "combine",
+            "couleur": "b4b1b1",
+            "x0": "80",
+            "y0": "10",
+            "x1": "88",
+            "y1": "65",
+            "objets": [
+                {
+                    "Nom": "FRBLOCTMKecu",
+                    "FormatObjet": "Ordinateur",
+                    "Secteur": "Moteur",
+                    "Détail": "Visu",
+                    "x": 1968,
+                    "y": 1968
+                },
+                {
+                    "Nom": "FRBLOCTMKaut",
+                    "FormatObjet": "Ordinateur",
+                    "Secteur": "Moteur",
+                    "Détail": "Puma",
+                    "x": 1968,
+                    "y": 1968
+                },
+                {
+                    "Nom": "FRBLOCTMKind",
+                    "FormatObjet": "Ordinateur",
+                    "Secteur": "Moteur",
+                    "Détail": "Osiris",
+                    "x": 1968,
+                    "y": 1968
+                }
+            ]
+        },
+        {
+            "Nom": "PF L",
+            "Détail": "Plateforme Moteur",
+            "Secteur": "Moteur",
+            "type": "combine",
+            "couleur": "b4b1b1",
+            "x0": "88",
+            "y0": "10",
+            "x1": "96",
+            "y1": "65",
+            "objets": [
+                {
+                    "Nom": "FRBLOCTMLecu",
+                    "FormatObjet": "Ordinateur",
+                    "Secteur": "Moteur",
+                    "Détail": "Visu",
+                    "x": 1968,
+                    "y": 1968
+                },
+                {
+                    "Nom": "FRBLOCTMLaut",
+                    "FormatObjet": "Ordinateur",
+                    "Secteur": "Moteur",
+                    "Détail": "Puma",
+                    "x": 1968,
+                    "y": 1968
+                },
+                {
+                    "Nom": "FRBLOCTMLind",
+                    "FormatObjet": "Ordinateur",
+                    "Secteur": "Moteur",
+                    "Détail": "Osiris",
+                    "x": 1968,
+                    "y": 1968
+                }
+            ]
+        }
+    ]
+}

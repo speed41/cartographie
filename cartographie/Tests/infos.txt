@@ -1,0 +1,7 @@
+hostname	date	os	etat
+FRBLOCtmeecu	12/01/2019	xp	0	1
+frbloctmaecu	15/06/2018	7	6	1
+frbloctmBecu	10/09/2020	10	9	2
+frbloctmcaut	01/01/2001	2008	4	3
+frbloctmDaut	01/01/2019	2000	12	1
+DLGRHQLQ2	01/01/2001	xp	54	2

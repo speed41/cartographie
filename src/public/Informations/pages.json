@@ -1,0 +1,24 @@
+{
+    "pages": [
+        {
+            "Nom": "defaut",
+            "Image": "defaut.jpg",
+            "Détail": "Page par défaut"
+        },
+        {
+            "Nom": "acronis",
+            "Image": "acronis.png",
+            "Détail": "Page par défaut"
+        },
+        {
+            "Nom": "Moteurs",
+            "Image": "moteurs.png",
+            "Détail": "Page par défaut"
+        },
+        {
+            "Nom": "GDI T0",
+            "Image": "gdi.png",
+            "Détail": "Page par défaut"
+        }
+    ]
+}

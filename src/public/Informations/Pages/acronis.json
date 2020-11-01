@@ -1,0 +1,69 @@
+{
+    "objet": [
+        {
+            "Nom": "DLGRHQLQ",
+            "type": "simple",
+            "Secteur": "SMI",
+            "FormatObjet": "Ordinateur",
+            "Détail": "PC développement",
+            "x": "54.13005272407732",
+            "y": "62.038664323374334"
+        },
+        {
+            "Nom": "Banc d'essai",
+            "Détail": "Baie développement",
+            "Secteur": "SMI",
+            "type": "combine",
+            "couleur": "d4c9c9",
+            "image": "camion.png",
+            "pasDeTitre": "true",
+            "x0": "20.738137082601053",
+            "y0": "12.65377855887522",
+            "x1": "71.00175746924428",
+            "y1": "37.78558875219684",
+            "objets": [
+                {
+                    "Nom": "DLGRHQLQ2",
+                    "FormatObjet": "Ordinateur",
+                    "Secteur": "SMI",
+                    "Détail": "PC développement",
+                    "x": 1968,
+                    "y": 1968
+                }
+            ]
+        },
+        {
+            "Nom": "wifi1RGG",
+            "type": "simple",
+            "Secteur": "wifi1RGG",
+            "FormatObjet": "Borne Wifi",
+            "Détail": "",
+            "x": "82.95254833040421",
+            "y": "17.04745166959578"
+        },
+        {
+            "Nom": "toto",
+            "Détail": "Baie développement",
+            "Secteur": "SMI",
+            "type": "combine",
+            "couleur": "66dfe1",
+            "image": "camion.png",
+            "pasDeTitre": "false",
+            "afficheInfos": "false",
+            "x0": "77.85588752196837",
+            "y0": "47.6274165202109",
+            "x1": "92.2671353251318",
+            "y1": "64.32337434094903",
+            "objets": [
+                {
+                    "Nom": "localhost",
+                    "FormatObjet": "Ordinateur",
+                    "Secteur": "SMI",
+                    "Détail": "Ce PC",
+                    "x": 1968,
+                    "y": 1968
+                }
+            ]
+        }
+    ]
+}

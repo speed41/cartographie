@@ -1,0 +1,1059 @@
+<html>
+    <head>
+        <style type="text/css">
+            @import url(/static/css/bootstrap.css);            
+        </style>
+            <title id="cartoTitle" class="">CartoGraphie (admin)</title>
+            <link rel="stylesheet" href="static\css\bootstrap.css" type="text/css" charset="utf-8" />
+            <link rel="stylesheet" href="static\css\global.css" type="text/css" charset="utf-8" />
+            
+            <script src="static\js\jquery-3.3.1.min.js"></script>
+            <script src="static\js\jquery.form.js"></script>
+            <script src="static\js\popper.js"></script>
+            <script src="static\js\bootstrap.min.js"></script>
+            <script src="/socket.io/socket.io.js"></script>
+            <script src="static\js\administration.js"></script>
+            <div id="Administration" style="margin: 0 auto; width: 100%; text-align: center">
+                <h1>            
+                    Administration
+                </h1>
+                <br>
+            </div>
+    </head>
+    <body>
+        <div style="margin: 0 auto; width: 100%; text-align: center;">
+
+          <div class="row">
+            <div class="col-sm-2">
+              <h3>                
+                <a target="_blank"href="http://computerherve:2020/pages"><img  style="width: 100; height: 80;" src="static\\img\\cartes.png" alt="Cartes"/></a><br>
+                Cartes<br><br>
+                <a target="_blank"href="http://computerherve:2020/inventaire"><img  style="width: 80; height: 80;" src="static\\img\\inventaire.png" alt="Inventaire"/></a><br>
+                Inventaire<br><br>
+                <a target="_blank"href="http://computerherve:2020/banqueImages"><img  style="width: 100; height: 80;" src="static\\img\\banque.png" alt="Cartes"/></a><br>
+                Banque d'image<br><br>
+                <a target="_blank"href="http://computerherve:2020/carto"><img  style="width: 100; height: 80;" src="static\\img\\cherche.png" alt="Cartes"/></a><br>
+                Pages<br><br>
+              </h3>
+            </div>
+            <div class="col-sm-10">
+                <h5>
+                  <br>
+                  <button type="button" class="btn-primary" style="width: 50%; height: 40px;" ID="connexion"><h2>Connexion</h2></button><br>
+                  <FONT face="times new roman" size="0"><br></FONT>
+                  <div class="boxed" style="color: black;">
+                    <h2>
+                      Options
+                      <img class="masque" style="float: right; width: 36; height: 36;" src="static\\img\\bouton.png" ID="options" alt="Options"/>
+                    </h2>
+                  </div>                 <FONT face="times new roman" size="0"><br></FONT>
+                  <div class="boxed" style="color: black;">
+                    <h2>
+                      Les Comptes 
+                      <img class="masque" style="float: right; width: 36; height: 36;" src="static\\img\\bouton.png" ID="comptes" alt="Comptes"/>
+                    </h2>
+                </div>                 <FONT face="times new roman" size="0"><br></FONT>
+                <div class="boxed" style="color: black;">
+                  <h2>
+                    Les Secteurs 
+                    <img class="masque" style="float: right; width: 36; height: 36;" src="static\\img\\bouton.png" ID="secteurs" alt="Secteurs"/>
+                  </h2>
+              </div>                 <FONT face="times new roman" size="0"><br></FONT>
+                <div class="boxed" style="color: black;">
+                  <h2>
+                    Les Cartes
+                    <img class="masque" style="float: right; width: 36; height: 36;" src="static\\img\\bouton.png" ID="pages" alt="Pages"/>
+                  </h2>
+                </div>                 <FONT face="times new roman" size="0"><br></FONT>
+                <div class="boxed" style="color: black;">
+                  <h2>
+                    Les Moyens & les objets
+                    <img style="float: right; width: 36; height: 36;" src="static\\img\\bouton.png" ID="objets" alt="Objets"/>
+                  </h2>
+                </div>                 <FONT face="times new roman" size="0"><br></FONT>
+                <div class="boxed" style="color: black;">
+                  <h2>
+                    Indicateurs
+                    <img class="masque" style="float: right; width: 36; height: 36;" src="static\\img\\bouton.png" ID="indicateurs" alt="Indicateurs"/>
+                  </h2>
+                </div>                 <FONT face="times new roman" size="0"><br></FONT>
+                <div class="boxed" style="color: black;">
+                  <h2>
+                    Config objets
+                    <img class="masque" style="float: right; width: 36; height: 36;" src="static\\img\\bouton.png" ID="configObjets" alt="Informations"/>
+                  </h2>
+                </div>                 <FONT face="times new roman" size="0"><br></FONT>
+                <div class="boxed" style="color: black;">
+                  <h2>
+                    Informations au click
+                    <img class="masque" style="float: right; width: 46; height: 36;" src="static\\img\\enmaintenance.png" ID="infosClick" alt="Informations"/>
+                  </h2>
+                </div>
+              </h5>
+          </div>
+        </div>
+
+
+
+    </body>
+</html>
+
+
+<!-- ###################################################################################
+                        boite de dialogue => config objets
+#################################################################################### -->  
+<form enctype="multipart/form-data" method="post" id="objetModal" class="modal">
+  <div aria-labelledby="objetModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-lg " role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title">Gestion des Objets</h3>
+          
+        </div>
+
+        <!-- ----------------------------------------------------------------------------------------- -->
+        <!-- ----------------------------------------------------------------------------------------- -->
+        <div class="modal-body noir">
+
+
+          <div class="row">
+            <!-- ----------------------------------------------------------------------------------------- -->
+              <div class="col-sm-2">
+                <SELECT id="objetsListe" size="6" style="width: 100%;">
+                  <OPTION>lundi
+                  <OPTION>mardi
+                  </SELECT>
+              </div>
+            <!-- ----------------------------------------------------------------------------------------- -->
+              <div class="col-sm-8">
+                <div class="row">
+                  <label for="mot" class="col-sm-1 col-form-label">Nom :</label>
+                  <input type="text" class="col-sm-11 form-control" id="objetNom" name="valeur" placeholder="">
+                </div>
+                <div class="row">
+                  <label for="mot" class="col-sm-1 col-form-label">Détail :</label>
+                  <input type="text" class="col-sm-11 form-control" id="objetDetail" name="valeur" placeholder="">
+                </div>
+                <div class="row" style="text-align: left;">
+                  <label for="mot" class="col-sm-5 col-form-label"> Est ce un "ordinateur" (pingable) ? :</label>
+                  <div class="col-sm-1">
+                    <br>
+                    <input type="checkbox" class="form-control" id="objetOrdinateur" name="valeur" placeholder="">
+                  </div>
+                </div>
+                <div class="row">
+                  <button type="button" style="float: left;" class="btnh btn-primary" id="objetNouveau">Nouvel objet</button>
+                  <button type="button" style="display: none; float: left;" class="btnh btn-primary" id="objetCorrige">Corrige l'objet</button>      
+                </div>
+              </div>
+            <!-- ----------------------------------------------------------------------------------------- -->
+              <div class="col-sm-2">
+                <div class="row">
+                  <div class="col-sm-11" id="objetImage" style="background-size: 100% 100%; width: 100%; height: 100px;"></div>
+                </div>
+                <div class="row">
+                  <SELECT id="objetListeImages" size="1">
+                    <OPTION>lundi
+                    <OPTION>mardi
+                  </SELECT>
+                </div>
+              </div>
+            <!-- ----------------------------------------------------------------------------------------- -->
+          </div>
+          
+          
+
+        </div>
+        <!-- ----------------------------------------------------------------------------------------- -->
+        <!-- ----------------------------------------------------------------------------------------- -->
+
+        <div class="modal-footer">                  
+          <h2>
+            <button type="button" style="float: right;" class="btnh btn-primary" id="objetOk">Enregistrer</button>
+            <button type="button" style="float: right;" class="btnh btn-primary" id="objetAnnuler">Annuler</button>
+          </h2>
+        </div>
+      </div> 
+    </div>
+  </div>
+</form>
+<!-- ###################################################################################
+                        boite de dialogue => Gestion des objets et des moyens
+#################################################################################### -->  
+<form enctype="multipart/form-data" method="post" id="gestionModal" class="modal">        
+  <div aria-labelledby="gestionModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title">Gestion des moyens & des objets</h3>
+        </div>
+
+        <!----------------------------------------------------------------->
+        <div class="modal-body noir" style="text-align: left;">
+          <div>
+            
+          <div class="row">
+            <div class="col-sm-6">
+              <div style="text-align: center;"><h2>Moyens</h2></div>                  
+                  <div class="row">
+                    <div class="col-sm-12">
+                    <!--  ---------------------------------------------------------------------------------------------  -->
+                      Composition du titre : <input type="text" class="form-control" cols="40" rows="1" id="optionsMoyenTitre" name="valeur" placeholder=""><br>
+                      Composition de la bulle :<input type="text" class="form-control" cols="40" rows="1" id="optionsMoyenBulle" name="valeur" placeholder=""><br>
+                      Informations par secteur stockées ici : 
+                      <div class="row">
+                        <div class="col-sm-11">
+                          <input type="text" class="form-control" rows="1" id="optionsSecteurs" name="valeur" placeholder="">
+                        </div>
+                        <div class="col-sm-1">
+                          <img id="optionsAide0" src="static\\img\\aide.png" style="width: 28px; height: 28px;">
+                        </div>
+                      </div>
+                  </div>
+                </div>
+
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <br>
+                      <div id="gestionMoyenTitre" style="text-align: center; width: 100%;">Titre</div>
+                      <div id="gestionMoyen" style="overflow: scroll; width: 100%; height: 100px; text-align: center;">
+                        <img id="gestionMoyenPC" src="static\\img\\ordinateur.png" style="width: 32px; height: 32px;"><br>
+                        <label id="gestionMoyenPCHostname">Hostname</label>
+                      </div>
+                    </div>
+                    <!--  ---------------------------------------------------------------------------------------------  -->
+                    <div class="col-sm-1">
+                    </div>
+                    <!--  ---------------------------------------------------------------------------------------------  -->
+                    <div class="col-sm-8">
+                      <div class="row">
+                        <div class="col-sm-4">Couleur : </div>
+                        <div class="col-sm-2"></div>
+                        <div class="col-sm-4"><input type="color" id="gestionMoyenCouleur" name="valeur" placeholder="" style="width: 65px;"></div>
+                        <div class="col-sm-2"></div>
+                      </div>
+                      <div class="row">
+                        <div class="col-sm-4"></div>
+                        <div class="col-sm-4"><b>Titre</b></div>
+                        <div class="col-sm-4"><b>Hostname</b></div>                        
+                      </div>
+                      <div class="row">
+                        <div class="col-sm-12" style="color:#FF0000"><u><b>Fond</b></u></div>
+                      </div>
+                      <div class="row">
+                        <div class="col-sm-4">Couleur : </div>
+                        <div class="col-sm-4"><input type="color" id="gestionMoyenTitreCouleur" name="valeur" placeholder="" style="width: 65px;"></div>
+                        <div class="col-sm-4"><input type="color" id="gestionMoyenHostnameCouleur" name="valeur" placeholder="" style="width: 65px;"></div>
+                      </div>
+                      <div class="row">
+                        <div class="col-sm-4">Transparent : </div>
+                        <div class="col-sm-4"><input type="checkbox" id="gestionMoyenTitreBordure" name="valeur" placeholder=""></div>
+                        <div class="col-sm-4"><input type="checkbox" id="gestionMoyenHostnameBordure"  name="valeur" placeholder=""></div>
+                      </div>
+                      <div class="row">
+                        <div class="col-sm-12" style="color:#FF0000"><u><b>Bordure</b></u></div>
+                      </div>
+                      <div class="row">
+                        <div class="col-sm-4">Epaisseur : </div>
+                        <div class="col-sm-4"><input type="number" id="gestionMoyenTitreBordureEpaisseur"  max="5" min="0" name="valeur" placeholder="" style="width: 65px;"></div>
+                        <div class="col-sm-4"><input type="number" id="gestionMoyenHostnameBordureLargeur"  max="5" min="0" name="valeur" placeholder="" style="width: 65px;"></div>
+                      </div>
+                      <div class="row">
+                        <div class="col-sm-4">Couleur : </div>
+                        <div class="col-sm-4"><input type="color" id="gestionMoyenTitreBordureCouleur" name="valeur" placeholder="" style="width: 65px;"></div>
+                        <div class="col-sm-4"><input type="color" id="gestionMoyenHostnameBordureCouleur" name="valeur" placeholder="" style="width: 65px;"></div>
+                      </div>
+                      <div class="row">
+                        <div class="col-sm-4">Arrondi : </div>
+                        <div class="col-sm-4"><input type="number" id="gestionMoyenTitreBordureArrondi" name="valeur" max="90" min="0" placeholder="" style="width: 65px;"></div>
+                        <div class="col-sm-4"><input type="number" id="gestionMoyenHostnameBordureArrondi"  max="90" min="0" name="valeur" placeholder="" style="width: 65px;"></div>
+                      </div>
+                      <div class="row">
+                        <div class="col-sm-12" style="color:#FF0000"><u><b>Police</b></u></div>
+                      </div>
+                      <div class="row">
+                        <div class="col-sm-4">Taille : </div>
+                        <div class="col-sm-4"><input type="number" id="gestionMoyenTitrePoliceTaille"  max="25" min="8" name="valeur" placeholder="" style="width: 65px;"></div>
+                        <div class="col-sm-4"><input type="number" id="gestionMoyenHostnamePoliceTaille"  max="25" min="8" name="valeur" placeholder="" style="width: 65px;"></div>
+                      </div>
+                      <div class="row">
+                        <div class="col-sm-4">Couleur : </div>
+                        <div class="col-sm-4"><input type="color" id="gestionMoyenTitrePoliceCouleur" name="valeur" placeholder="" style="width: 65px;"></div>
+                        <div class="col-sm-4"><input type="color" id="gestionMoyenHostnamePoliceCouleur" name="valeur" placeholder="" style="width: 65px;"></div>
+                      </div>
+                    </div>
+                    <!--  ---------------------------------------------------------------------------------------------  -->
+                  </div>
+            </div>
+            <div class="col-sm-1" style="text-align: center;">
+              <br><br>
+              <h3>Termes</h3>
+              <h5>à utiliser dans les titres et les bulles</h5><br>
+              <label title="Tabulation">&lt;tab&gt;</label><br>
+              <label title="Retour à la ligne">&lt;br&gt;</label><br><br>
+              <label title="Nom du moyen ou de l'ordinateur">{Nom}</label><br>
+              <label title="Secteur du moyen ou de l'ordinateur">{Secteur}</label><br>
+              <label title="Détail du moyen ou de l'ordinateur">{Détail}</label><br>
+            </div>
+            <div class="col-sm-5">
+              <div style="text-align: center;"><h2>Objets</h2></div>                  
+                  <div class="row">
+                    Composition du titre :<input type="text" class="form-control" cols="40" rows="1" id="optionsOrdinateurTitre" name="valeur" placeholder=""><br>
+                    Composition de la bulle :<input type="text" class="form-control" cols="40" rows="1" id="optionsOrdinateurBulle" name="valeur" placeholder=""><br>
+                    Expressions, dans les noms des ordinateurs, à remplacer par un * :<input title="Utiliser les : comme séparateur" type="text" class="form-control" cols="40" rows="1" id="optionsAsterix" name="valeur" placeholder=""><br>
+                    
+                      <div class="col-sm-4" style="text-align: left;">
+                        <br>
+                        <img id="gestionPC" src="static\\img\\ordinateur.png" style="width: 32px; height: 32px;"><br>
+                        <label id="gestionPCHostname">Hostname</label>
+                      </div>
+                      <div class="col-sm-8">
+                        <div class="row">
+                          <div class="col-sm-1"></div>
+                          <div class="col-sm-7">Taille : </div>
+                          <div class="col-sm-4"><input type="number" id="gestionPCLargeur"  max="52" min="20" name="valeur" placeholder="" style="width: 65px;"></div>
+                        </div>
+                        <div class="row">
+                          <div class="col-sm-1"></div>
+                          <div class="col-sm-7"></div>
+                          <div class="col-sm-4"><b>Hostname :</b></div>
+                        </div>
+                        <div class="row">
+                          <div class="col-sm-12" style="color:#FF0000"><u><b>Fond</b></u></div>
+                        </div>
+                        <div class="row">
+                          <div class="col-sm-1"></div>
+                          <div class="col-sm-7">Couleur : </div>
+                          <div class="col-sm-4"><input type="color" id="gestionPCHostnameCouleur" name="valeur" placeholder="" style="width: 65px;"></div>
+                        </div>
+                        <div class="row">
+                          <div class="col-sm-1"></div>
+                          <div class="col-sm-7">Transparent : </div>
+                          <div class="col-sm-4"><input type="checkbox" id="gestionPCHostnameBordure" name="valeur" placeholder=""></div>
+                        </div>
+                        <div class="row">
+                          <div class="col-sm-12" style="color:#FF0000"><u><b>Bordure</b></u></div>
+                        </div>
+                        <div id="gestionBordurePCHostname">
+                          <div class="row">
+                            <div class="col-sm-1"></div>
+                            <div class="col-sm-7">Epaisseur : </div>
+                            <div class="col-sm-4"><input type="number" id="gestionPCHostnameBordureEpaisseur"  max="5" min="0" name="valeur" placeholder="" style="width: 65px;"></div>
+                          </div>
+                          <div class="row">
+                            <div class="col-sm-1"></div>
+                            <div class="col-sm-7">Couleur : </div>
+                            <div class="col-sm-4"><input type="color" id="gestionPCHostnameBordureCouleur" name="valeur" placeholder="" style="width: 65px;"></div>
+                          </div>
+                          <div class="row">
+                            <div class="col-sm-1"></div>
+                            <div class="col-sm-7">Arrondi : </div>
+                            <div class="col-sm-4"><input type="number" id="gestionPCHostnameBordureArrondi"  max="90" min="0" name="valeur" placeholder="" style="width: 65px;"></div>
+                          </div>
+                          <div class="row">
+                            <div class="col-sm-12" style="color:#FF0000"><u><b>Police</b></u></div>
+                          </div>
+                          <div class="row">
+                            <div class="col-sm-1"></div>
+                            <div class="col-sm-7">Police taille : </div>
+                            <div class="col-sm-4"><input type="number" id="gestionPCHostnamePoliceTaille"  max="25" min="8" name="valeur" placeholder="" style="width: 65px;"></div>
+                          </div>
+                          <div class="row">
+                            <div class="col-sm-1"></div>
+                            <div class="col-sm-7">Police Couleur : </div>
+                            <div class="col-sm-4"><input type="color" id="gestionPCHostnamePoliceCouleur" name="valeur" placeholder="" style="width: 65px;"></div>
+                          </div>
+                          
+                          
+                        </div>
+                      </div>
+                    
+
+                  </div> 
+              </div> 
+            </div>
+          </div>
+        </div>
+        <!----------------------------------------------------------------->
+
+        <div class="modal-footer">
+          <h2>                    
+            <button type="button" style="float: right;" class="btnh btn-primary" id="gestionOk">Enregistrer</button>
+            <button type="button" style="float: right;" class="btnh btn-primary" id="gestionAnnuler">Annuler</button>
+          </h2><br>
+          <br>
+        </div>
+      </div> 
+    </div>
+  </div>
+</form>
+<!-- ###################################################################################
+                        boite de dialogue => Aide pour dossier infos moyens
+#################################################################################### -->  
+<form enctype="multipart/form-data" method="post" id="aide0Modal" class="modal">        
+  <div aria-labelledby="aide0ModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title">Aide pour le dossier infos par secteur</h3>
+        </div>
+        <div class="modal-body noir">
+          <h3><div id="dossier" style="color: blue; text-align: left;"></div></h3><br>
+          <div class="row" style="text-align: left;">
+            Ce dossier est destiné à être renseigné par les secteurs eux même pour maintenir les informations de leurs moyens à jour de manière simple.
+            <div style="color: red;"><b>Ce dossier devra donc être accécible par le serveur et par les systèmes (ou personnes) qui vont les maintenir à jour.</b></div><br><br>
+            Dans ce dossier, chaque secteur peut y avoir un dossier à son nom. Dans chaque dossier 2 types de fichiers :
+          </div>
+          <br>
+          <div class="row">
+            <div class="col-sm-12">
+              Exemple, nom du moyen : "riboucleuse"
+            </div>
+            <div class="col-sm-6" style="text-align: left; border-width: 1px; border-style: solid;">
+              <h3 style="text-align: center;">Informations du moyen</h3>
+              <b>le nom du fichier :</b><br>
+              <div class="row">
+                <div class="col-sm-12" style="text-align: right;">
+                  "infos_"nom du moyen.txt (infos_riboucleuse.txt)<br><br>
+                  </div>
+              </div>
+              Ces informations pourront êtres affichées sur le moyen lui même. Elles permettent, par exemple d'affichier le n° d'immobilisation, sa fonction son numéro d'étalonnage ...
+            </div>
+            <div class="col-sm-6" style="text-align: left; border-width: 1px; border-style: solid;">
+              <div class="row">
+                <div class="col-sm-12" style="text-align: left;">
+                  <h3 style="text-align: center;">Etat du moyen</h3>
+                  <b>le nom du fichier :</b><br>
+                </div>
+                <div class="col-sm-12" style="text-align: right;">
+                  nom du moyen.txt (riboucleuse.txt)
+                </div>
+                <div class="col-sm-12" style="text-align: left;">
+                  <br>
+                  Ces informations seront affichées sous le moyen. Elles permettent d'afficher l'état d'avancement du test en cours grace à une structure simple.<br><br>
+                  <div style="text-align: center;"><b>Si une ligne commence par :</b></div>
+                </div>
+              </div>
+              <div class="row" style="border-style: dotted; border-width: 1px;">
+                <div class="col-sm-4" style="text-align: center;">
+                  titre=
+                </div>
+                <div class="col-sm-8">
+                  Le texte après sera écrit en premier avec une taille supérieur au reste du texte
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-4" style="text-align: center;">
+                  couleur=
+                </div>
+                <div class="col-sm-8">
+                  indique la couleur en rgb (#FF00FF) de la zone
+                </div>
+              </div>
+              <div class="row" style="border-style: dotted; border-width: 1px;">
+                <div class="col-sm-4" style="text-align: center;">
+                  progresse=
+                </div>
+                <div class="col-sm-8">
+                  affiche une progresse barre, la valeur à indiquée est en % (sans le symbol %)
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-4" style="text-align: center;">
+                  bulle=
+                </div>
+                <div class="col-sm-8">
+                  Le texte qui sera dans l'info bulle.
+                </div>
+              </div>
+              <div class="row" style="border-style: dotted; border-width: 1px;">
+                <div class="col-sm-4">
+                  
+                </div>
+                <div class="col-sm-8">
+                  Le texte sera affiché de manièe simple
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        
+        Par contre si le contenu du fichier texte est sous format html, il sera interprété comme tel, à condition que la première ligne soit : <b>&lt;HTML&gt;</b>
+        <div class="modal-footer">                  
+          <h2>
+            <button type="button" style="text-align: center;" class="btnh btn-primary" id="okAide0">Ok</button>
+          </h2>
+        </div>
+      </div> 
+    </div>
+  </div>
+</form>
+<!-- ###################################################################################
+                        boite de dialogue => Options
+#################################################################################### -->  
+<form enctype="multipart/form-data" method="post" id="optionsModal" class="modal">        
+  <div aria-labelledby="optionsModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title">Options</h3>
+        </div>
+
+        <!----------------------------------------------------------------->
+        <div class="modal-body" style="text-align: left;">
+          <div style="text-align: center;">
+            <div name="entete" id="entete" style="height: 60px; background-color: rgb(52, 228, 131);">
+              <div class="row">
+                <div class="col-sm-4" style="height: 100%;" id="titre">Identification</div> 
+                <div class="col-sm-4" style="background-size: 100% 100%;" id="admin"></div>
+                <div class="col-sm-4" style="font-size: 10pt;">
+                  Couleur : <input type="color" id="optionEnTeteCouleur" name="valeur" placeholder="" style="width: 35px;"><br>
+                  Couleur police : <input type="color" id="optionEnTetePoliceCouleur" name="valeur" placeholder="" style="width: 35px;">
+                  taille police : <input type="number" id="optionEnTetePoliceTaille"  max="35" min="10" name="valeur" placeholder="" style="width: 65px;">    
+                </div>
+              </div>
+            </div>
+            <div id="fondOptions" style="color: azure;">
+              <div id="optionListeImageFond"></div>
+              Couleur police page : <input type="color" id="optionPoliceCouleur" name="valeur" placeholder="" style="width: 65px;"><br>
+              <br><br>
+              <div id="optionLogos"></div>
+              <br><br>
+              Temps de défilement : <input style="width: 50px;" type="number" id="optionsTimer" name="valeur" placeholder=""> en secondes<br>
+              <br>
+              Activer le PING :  <input type="checkbox" id="optionsPing" name="scales" checked><br>
+              <br>
+                
+                
+            </div>
+          </div>
+          
+        </div>
+        <!----------------------------------------------------------------->
+        <div class="modal-footer">
+          <h2>                    
+            <button type="button" style="float: right;" class="btnh btn-primary" id="optionsOk">Enregistrer</button>
+            <button type="button" style="float: right;" class="btnh btn-primary" id="optionsAnnuler">Annuler</button>
+          </h2><br>
+          <br>
+        </div>
+      </div> 
+    </div>
+  </div>
+</form>
+<!-- ###################################################################################
+                        boite de dialogue => Identification
+#################################################################################### -->  
+<form enctype="multipart/form-data" method="post" id="identificationModal" class="modal">        
+  <div aria-labelledby="comptesModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-lg " role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title">Identification</h3>
+          
+        </div>
+        <div class="modal-body noir">
+          <label for="mot" class="col-sm-2 col-form-label">Identifiant :</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" cols="40" rows="5" id="identifiant" name="valeur" placeholder="">                              
+                    </div>
+          <label for="mot" class="col-sm-2 col-form-label">Mot de passe :</label>
+                    <div class="col-sm-10">
+                      <input type="password" class="form-control" cols="40" rows="5" id="motDePasse" name="valeur" placeholder="">                              
+                    </div>
+        </div>
+        <div class="modal-footer">                  
+          <h2>
+            <button type="button" style="float: right;" class="btnh btn-primary" id="ok">Enregistrer</button>
+          </h2>
+        </div>
+      </div> 
+    </div>
+  </div>
+</form>
+<!-- ###################################################################################
+                        boite de dialogue => Corrige compte
+#################################################################################### -->  
+<form enctype="multipart/form-data" method="post" id="corrigeModal" class="modal">        
+  <div aria-labelledby="corrigeCompteModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title" id="titreCorrige">Corrige le compte</h3>
+          <div id="Corrigelogin"></div>
+        </div>
+        <div class="modal-body noir">
+          <label for="mot" class="col-sm-2 col-form-label">Identifiant :</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" cols="40" rows="5" id="corrigeIdentifiant" name="valeur" placeholder="">                              
+                    </div>
+          <label for="mot" class="col-sm-2 col-form-label">Mot de passe :</label>
+                    <div class="col-sm-10">
+                      <input type="password" class="form-control" cols="40" rows="5" id="mdp0" name="valeur" placeholder="">                              
+                    </div>
+          <label for="mot" class="col-sm-4 col-form-label">Confirmer mot de passe :</label>
+                    <div class="col-sm-10">
+                      <input type="password" class="form-control" cols="40" rows="5" id="mdp1" name="valeur" placeholder="">                              
+                    </div>
+          <br>
+          <input type="checkbox" id="corrigeAdmin" name="scales"> <label for="corrigeAdmin">Admin</label>
+          <br>
+
+          <div class="row">
+            <ul role="listeMots" id="listeMots" tabindex="0" class="col-md-8">
+                
+            </ul>              
+          </div>
+
+        </div>
+        <div class="modal-footer">                  
+          <h2>
+            <button type="button" style="float: right;" class="btnh btn-primary" id="okCorrige">Enregistrer</button>
+          </h2>
+        </div>
+      </div> 
+    </div>
+  </div>
+</form>
+<!-- ###################################################################################
+                        boite de dialogue => Nouveau mot de passe
+#################################################################################### -->  
+<form enctype="multipart/form-data" method="post" id="nouveauMotDePasseModal" class="modal">        
+  <div aria-labelledby="nouveauMDPModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title">Nouveau mot de passe</h3>
+          <div id="login"></div>
+        </div>
+        <div class="modal-body noir">
+          <label for="mot" class="col-sm-2 col-form-label">Mot de passe :</label>
+                    <div class="col-sm-10">
+                      <input type="password" class="form-control" cols="40" rows="5" id="nouvMdp0" name="valeur" placeholder="">                              
+                    </div>
+          <label for="mot" class="col-sm-2 col-form-label">Nouveau mot de passe :</label>
+                    <div class="col-sm-10">
+                      <input type="password" class="form-control" cols="40" rows="5" id="nouvMdp1" name="valeur" placeholder="">                              
+                    </div>
+          <label for="mot" class="col-sm-4 col-form-label">Confirmer nouveau mot de passe :</label>
+                    <div class="col-sm-10">
+                      <input type="password" class="form-control" cols="40" rows="5" id="nouvMdp2" name="valeur" placeholder="">                              
+                    </div>
+        </div>
+        <div class="modal-footer">                  
+          <h2>
+            <button type="button" style="float: right;" class="btnh btn-primary" id="okNouveauMotDePasse">Enregistrer</button>
+          </h2>
+        </div>
+      </div> 
+    </div>
+  </div>
+</form>
+<!-- ###################################################################################
+                        boite de dialogue => Comptes
+#################################################################################### -->  
+<form enctype="multipart/form-data" method="post" id="comptesModal" class="modal">        
+    <div aria-labelledby="comptesModalTitle" aria-hidden="true">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="modal-title">Comptes</h3>            
+          </div>
+
+          <div class="modal-body noir">
+            <table class="noir" align='center' border='0' cellpadding='10' id="tableauComptes">
+                <tr>
+                <td width='30%' style='text-align:justify;'>
+                    <h2 style="text-align: left;" >Nom</h2>         
+                </td>
+                <td width='50%' style='text-align:justify;'>
+                    <h2 style="text-align: left;" >Admin sur les cartes</h2>         
+                </td>
+                <td width='20%' style='text-align:justify;'>
+                </td>
+                </tr>
+            </table>
+
+          </div>
+          <div class="modal-footer">
+            <h3>
+              <button type="button" style="float: left;" class="btnh btn-primary" id="fermerComptes">Fermer</button>
+            </h3>
+            <h2>
+              <button type="button" style="float: right;" class="btnh btn-primary" id="nouveauCompte" value="Upload">Nouveau</button>
+            </h2>
+          </div>
+        </div> 
+      </div>
+    </div>
+</form>
+<!-- ###################################################################################
+                        boite de dialogue => Nouveau mot de passe
+#################################################################################### -->  
+<form enctype="multipart/form-data" method="post" id="secteursModal" class="modal">        
+  <div aria-labelledby="secteursModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title">Secteurs</h3>
+        </div>
+        <div class="modal-body noir">
+       
+          <div class="row">
+            <div class="col-sm-6">
+              <FORM>
+                  <SELECT name="nom" size="10" id="secteursListe" style="width: 100%; overflow: auto;">
+                  </SELECT>
+              </FORM>
+            </div>
+            <div class="col-sm-6">
+              Nom du secteur :
+              <input type="text" class="form-control" cols="40" rows="5" id="secteursNom" name="valeur" placeholder="">              
+              <button type="button" style="float: right; width: 75px" class="btnh btn-secondary" id="secteursNouveau">Ajoute</button>
+              <button type="button" class="btnh btn-secondary" id="secteursCorrige"  style="float: right; position: absolute; left: 0px; width: 75px">Corrige</button>
+              <button type="button" class="btnh btn-secondary" id="secteursSupprime"  style="float: right; position: absolute; left: 0px; top: 90%; width: 75px">Supprime</button>
+            </div>
+          </div>
+          
+        </div>
+        <div class="modal-footer">                  
+          <h2>
+            <button type="button" style="float: right;" class="btnh btn-primary" id="okSecteurs">Enregistrer</button>
+            <button type="button" style="float: right;" class="btnh btn-primary" id="annulerSecteurs">Annuler</button>
+          </h2>
+        </div>
+      </div> 
+    </div>
+  </div>
+</form>
+<!-- ###################################################################################
+                        boite de dialogue => Pages
+#################################################################################### -->  
+<form action="/postgoImageCarte" enctype="multipart/form-data" method="post" id="pagesModal" class="modal">        
+  <div aria-labelledby="PagesModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title">Pages</h3>
+          
+        </div>
+        <div class="modal-body noir">
+
+          <div id="tabs">
+            <ul id="ulOnglets">
+              
+            </ul>
+        </div>
+          <!--  https://www.xul.fr/ecmascript/onglets.php  -->
+        
+          <section id="section">
+            <img  id="imageDeFond"/>
+            <div class="col-sm-10">
+              <label for="mot" class="col-sm-4 col-form-label" id="titreTexte">Titre :</label>
+              <input type="text" class="form-control" cols="40" id="titrePage" name="valeur" placeholder="">                              
+            </div>
+            
+            <div class="col-sm-10">
+              <label for="mot" class="col-sm-4 col-form-label">Commentaire :</label>
+              <input type="text" class="form-control" rows="5" id="commentairePage" name="valeur" placeholder="">                              
+            </div>
+            <br>
+          </section>
+          
+      <!--     <button type="button" style="float: left;" class="btnh btn-secondary" id="pageChargerImage">Nouvelle image</button>   -->
+          
+          <button type="submit" style="float: left;" class="btnh btn-primary" id="goImage" value="Upload" name="sauvImg">enregistre Image</button>
+          <input type="file" name="fil" id="pageChargerImage" accept="image/png, image/jpeg" />
+          <!--<FORM> un form dans un form c'est pas top -->
+            <SELECT id="listeImagesStock" size="1">
+            <OPTION>lundi
+            <OPTION>mardi
+            </SELECT>
+            <!---</FORM>-->
+          <br>
+          <button type="button" style="float: right;" class="btnh btn-secondary" id="enregistrerPage">Enregistrer</button>
+          <button type="button" style="float: right;" class="btnh btn-secondary" id="supprimePage">Supprime la page</button>
+        
+
+        </div>
+            <div class="modal-footer">
+              <h3>
+                <button type="button" style="float: left;" class="btnh btn-primary" id="fermerPages">Fermer</button>
+              </h3>
+              <h2>
+                <button type="button" style="float: right;" class="btnh btn-primary" id="nouvellePage" value="Upload">Nouvelle page</button>
+              </h2>
+            </div>
+          </div> 
+        </div>
+      </div>
+</form>
+<!-- ###################################################################################
+                        boite de dialogue => Indicateurs
+#################################################################################### -->  
+<form action="/postgoImageIndicateur" enctype="multipart/form-data" method="post" id="indicateurModal" class="modal">
+  <div aria-labelledby="indicateurModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title">Indicateurs / Variables</h3>          
+        </div>
+        <div class="modal-body noir">      
+          <div class="row">                  
+              <div class="col-sm-3">
+                  <div class="row">
+                          <FORM class="col-sm-9">
+                              <SELECT name="nom" size="10" id="indicateurListe" style="width: 75%; overflow: auto;">
+                                  <OPTION>A</OPTION>
+                              </SELECT>
+                          </FORM>
+                          <div class="col-sm-3">
+                            <button type="button" style="float: left;" class="btnh btn-secondary" id="indicateurMonte">Haut</button>
+                            </br></br></br></br></br></br></br></br></br>
+                            <button type="button" style="float: left;" class="btnh btn-secondary" id="indicateurDescend">Bas</button>
+                          </div>                          
+                  </div>
+                    <br>
+                    <button type="button" style="float: left;" class="btnh btn-secondary" id="indicateurSupprime">Supprime</button>
+                    <button type="button" style="float: left;" class="btnh btn-secondary" id="indicateurDuplique">Duplique</button>
+                  <FORM class="col-sm-12">
+                    <SELECT name="nom" size="1" id="indicateurListeAspect" style="width: 100%; overflow: auto;">
+                        <OPTION>Variables & Indicateurs</OPTION>
+                        <OPTION>Variables</OPTION>
+                        <OPTION>Indicateurs</OPTION>
+                    </SELECT>
+                  </FORM>
+              </div>
+              <div class="col-sm-9">
+                <div class="boxed" title="Utilisez soit le hostname ou la valeur d'une variable pour faire cette recherche" class="col-sm-12" style="text-align: center; margin-left: 0px; left: auto; width: auto; height: auto;">
+                  <div class="row">
+                    
+                    <div class="col-sm-3">
+                      <input style="margin-top: 5px;" type="checkbox" id="IndicateurHostname" name="valeur" placeholder="">
+                      <label style="margin-left: 10px;">Utilise le Hostname</label>
+                    </div>
+
+                    <div id="indicateurPasHostname" class="col-sm-9">
+                      <div class="row">
+                        <div class="col-sm-3" style="text-align: right;">
+                          <label >Variable utilisée</label>
+                        </div>
+
+                        <div class="col-sm-8" style="text-align: left; margin-left: 5px;">
+                          <FORM>
+                            <SELECT name="nom" size="1" id="indicateurVariableUtilisee">
+                              <OPTION>A</OPTION>
+                            </SELECT>
+                          </FORM>
+                        </div>
+                      </div>
+
+                    </div>
+
+                  </div>
+                </div>
+
+                <label class="col-sm-3">Nom :    </label><input type="text" class="col-sm-8" id="indicateurNom"     name="valeur" placeholder=""><br>
+                <label class="col-sm-3">Détail : </label><input type="text" class="col-sm-8" id="indicateurDetail"  name="valeur" placeholder=""><br>
+                <label class="col-sm-3">Dossier :</label><input type="text" class="col-sm-8" id="indicateurDossier" name="valeur" placeholder=""><br>
+                <label class="col-sm-3">Fichier :</label><input type="text" class="col-sm-8" id="indicateurFichier" name="valeur" placeholder=""><br>
+<!--
+                <div class="boxed" id="IndicateurVariableBoxed" style="text-align: center; height: auto; background-color: rgb(152, 255, 131);">
+                  <input style="margin-top: 5px;" type="checkbox" id="IndicateurVariable" name="valeur" placeholder="">
+                  <label style="margin-left: 10px;">Stocker le résultat dans une variable</label>
+                </div>
+-->                
+                <div class="modal-body noir">        
+                  <div id="tabs">
+                    <ul id="indicateurOnglets">
+                      <li><a id="indicateur1">Valeurs        </a></li>
+                      <li><a id="indicateur2">Recherche      </a></li>
+
+                      <li><a id="indicateur3">Banque d'images</a></li>
+                    </ul>
+                </div>
+
+                <section>
+                  <div id="indicateurValeurs">
+                    <div class="row">
+                      <div class="col-sm-1" style="text-align: center;"></div>
+                      <div class="col-sm-2" style="text-align: center;">Si PC Vu</div>
+                      <div class="col-sm-2" style="text-align: center;">Si PC Pas Vu</div>
+                      <div class="col-sm-2" style="text-align: center;">Valeur A</div>
+                      <div class="col-sm-2" style="text-align: center;">Valeur B</div>
+                      <div class="col-sm-2" style="text-align: center;">Valeur C</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-sm-1">Valeur</div>
+                      <div class="col-sm-2"></div>
+                      <div class="col-sm-2"></div>
+                      <input type="number" class="col-sm-2" id="indicateurValeurA" name="valeur" placeholder="">
+                      <input type="number" class="col-sm-2" id="indicateurValeurB" name="valeur" placeholder="">
+                      <input type="number" class="col-sm-2" id="indicateurValeurC" name="valeur" placeholder="">
+                    </div>
+                    <div id="indicateurImages">
+                      <div class="row">
+                        <div class="col-sm-1">Si ...</div>
+                        <div class="col-sm-2" style="text-align: center;">Vu</div>
+                        <div class="col-sm-2" style="text-align: center;">Pas Vu</div>
+                        <div class="col-sm-2" style="text-align: center;">Egale à A</div>
+                        <div class="col-sm-2" style="text-align: center;">Egale à B</div>
+                        <div class="col-sm-2" style="text-align: center;">Supérieur à C</div>
+                      </div>
+                      <div class="row">
+                        <div class="col-sm-1">Image</div>
+                        <div class="col-sm-2">
+                          <img id="indicateurImageVu" style="width: 50%"/><br>
+                          <SELECT name="nom" size="1" id="indicateurChoixImageVu" style="width: 100%;">
+                            <OPTION>A</OPTION>
+                          </SELECT>
+                        </div>
+                        <div class="col-sm-2">
+                          <img id="indicateurImagePasVu" style="width: 50%"/><br>
+                          <SELECT name="nom" size="1" id="indicateurChoixImagePasVu" style="width: 100%;">
+                            <OPTION>A</OPTION>
+                          </SELECT>
+                        </div>
+                        <div class="col-sm-2">
+                          <img id="indicateurImageA" style="width: 50%"/><br>
+                          <SELECT name="nom" size="1" id="indicateurChoixImageA" style="width: 100%;">
+                            <OPTION>A</OPTION>
+                          </SELECT>
+                        </div>
+                        <div class="col-sm-2">
+                          <img id="indicateurImageB" style="width: 50%"/><br>
+                          <SELECT name="nom" size="1" id="indicateurChoixImageB" style="width: 100%;">
+                            <OPTION>A</OPTION>
+                          </SELECT>
+                        </div>
+                        <div class="col-sm-2">
+                          <img id="indicateurImageC" style="width: 50%"/><br>
+                          <SELECT name="nom" size="1" id="indicateurChoixImageC" style="width: 100%;">
+                            <OPTION>A</OPTION>
+                          </SELECT>
+                        </div>
+                      </div>
+                    </div>
+                    <div id="indicateurCouleurs">
+                      <div class="row">
+                        <div class="col-sm-1">Si ...</div>
+                        <div class="col-sm-2"></div>
+                        <div class="col-sm-2"></div>
+                        <div class="col-sm-2" style="text-align: center;">Inférieur ou égale à A</div>
+                        <div class="col-sm-2" style="text-align: center;">Inférieur ou égale à B</div>
+                        <div class="col-sm-2" style="text-align: center;">Supérieur à C</div>
+                      </div>
+                      <div class="row">
+                        <div class="col-sm-1">Couleur</div>
+                        <div class="col-sm-2"></div>
+                        <div class="col-sm-2"></div>
+                        <input class="col-sm-2"  type="color" id="indicateurCouleurA" name="valeur" placeholder="">
+                        <input class="col-sm-2"  type="color" id="indicateurCouleurB" name="valeur" placeholder="">
+                        <input class="col-sm-2"  type="color" id="indicateurCouleurC" name="valeur" placeholder="">
+                      </div>
+                    </div>
+                  </div>
+
+                  <div id="indicateurTypeRecherche">
+                    <div class="row">
+                      <div class="col-sm-6">
+                          <h5>Source pour la recherche :</h5>
+                          <FORM class="col-sm-12">
+                            <SELECT name="nom" size="1" id="indicateurType">
+                            </SELECT>
+                          </FORM>
+                          <label id="indicateurTypeDetail" style="color: blue;"></label><br>
+                          <h5>Type de calcul :</h5>
+                          <FORM class="col-sm-12">
+                            <SELECT name="nom" size="1" id="indicateurCalcul">
+                            </SELECT>
+                          </FORM>
+                          <label id="indicateurCalculDetail" style="color: blue;"></label><br>
+                          
+                      </div>
+
+                      <div class="col-sm-1"></div>
+
+                      <div id="indicateurCalculInfos" class="col-sm-5">
+                          <div id="indicateurTextExcel" class="col-sm-12">
+
+                            <div id="indicateurTxt">
+                                <h5>Fichier type texte</h5>                              
+                                Séparateur :<input type="text" class="col-sm-2" id="indicateurSeparateur" name="valeur" placeholder=""> 
+                            </div>
+                            <div id="indicateurXls">
+                                <h5>Fichier Excel</h5>
+                                Onglet :<input type="text" class="col-sm-8" id="indicateurOnglet" name="valeur" placeholder=""> <br>
+                                Numéro colonne hostname :<input type="number" class="col-sm-2" id="indicateurNumeroHostname" name="valeur" placeholder=""><br>
+                            </div>
+                            <div id="aRecuperer">
+                              <h5>A récupérer</h5>
+                              Numéro champ ou colonne :<input type="number" class="col-sm-2" id="indicateurNumeroARecuperer" name="valeur" placeholder=""><br>
+                            </div>
+                          </div>
+
+                          <div id="indicateurTextConient">
+                            <h5>Liste images</h5>
+                            <div class="row">
+                              <FORM class="col-sm-8">
+                                <SELECT style="width: 100%;" size="4" id="indicateurListeImagesContient">
+                                </SELECT>
+                              </FORM>
+                              <div class="col-sm-4">
+                                <img style="width: 32px;" id="indicateurImageListeContient"/>
+                                <br>
+                                <button type="button"id="indicateurSupprimeImageContient">Supprime l'image</button>
+                              </div>
+                            </div>
+                              <SELECT name="nom" size="1" id="indicateurAjouteImageListe" style="width: 45%;">
+                                <OPTION>A</OPTION>
+                              </SELECT>
+                            
+                            <button type="button" style="width: 45%;" id="indicateurAjouteImageContient">Ajoute image</button>
+                          </div>
+
+                      </div>                            
+
+                    </div>
+                  </div>
+                                    
+                  <div id="indicateurBanqueImages">
+                    <div id="indicateurListeImageBanque">
+
+                    </div>
+                    Importer une image :
+                    <button type="submit" style="float: right;" class="btnh btn-primary" id="indicateurLoadImage" value="Upload" name="sauvImgIndicateur">Importe l'image choisie</button>
+                    <input type="file" name="fil" id="indicateurChargerImage" accept="image/png, image/jpeg" />
+                    </br></br>
+                    <img id="indicateurListeBanqueSelection"  class="indicateur" style="position: relative;"/>
+                    <label id="indicateurListeBanqueSelectionNom"></label>
+                    <button type="button" style="float: center;"  id="indicateurSupprimeImageBanque">Supprime l'image</button>
+                  </div>
+                  <br>
+                  <div class="boxed" id="IndicateurVariableBoxed" style="text-align: center; height: auto; background-color: rgb(152, 255, 131);">
+                    <input style="margin-top: 5px;" type="checkbox" id="IndicateurVariable" name="valeur" placeholder="">
+                    <label style="margin-left: 10px;">Stocker le résultat dans une variable</label>
+                  </div>
+  <!-- ######################################################################################################################## -->
+
+                </section>
+              </div>
+          </div>
+
+        <h4>                  
+          <button type="button" style="float: right" class="btnh btn-primary" id="indicateurEfface">Efface les champs</button>
+          <button type="button" style="float: left" class="btnh btn-secondary" id="indicateurCorrige">Corrige l'indicateur</button>
+          <button type="button" style="float: left" class="btnh btn-secondary" id="indicateurNouveau">Nouvel indicateur</button>
+        </h4>
+        </div>
+        <div class="modal-footer">                  
+          <h2>                    
+            <button type="button" style="float: right;" class="btnh btn-primary" id="indicateurOk">Enregistrer ...</button>
+            <button type="button" style="float: right;" class="btnh btn-primary" id="indicateurAnnuler">Annuler</button>
+          </h2>
+        </div>
+      </div> 
+    </div>
+  </div>
+</form>

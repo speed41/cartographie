@@ -1,0 +1,16 @@
+{
+    "Secteurs": [
+        {
+            "Nom": "SMI"
+        },
+        {
+            "Nom": "System de Management de l’Information"
+        },
+        {
+            "Nom": "Moteur"
+        },
+        {
+            "Nom": "Perfo"
+        }
+    ]
+}

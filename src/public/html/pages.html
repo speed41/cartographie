@@ -1,0 +1,282 @@
+<html>
+    <head>
+        <style type="text/css">
+            @import url(/static/css/bootstrap.css);            
+        </style>
+        <title id="cartoTitle" class="">CartoGraphie (Cartes)</title>
+        <script src="static\js\jquery-3.3.1.min.js"></script>
+        <script src="static\js\popper.js"></script>
+        <script src="static\js\bootstrap.min.js"></script>
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="static\js\pages.js"></script>
+    <!--    <script src="static\js\administration.js"></script>        -->
+    </head>
+    <body id="body">
+        <div id="entete" style="height: 60px; background-color: rgb(52, 228, 131);">
+          <div class="row">
+            
+
+            <div class="col-sm-5">
+              <div class="row" style="height: 55px">
+                <div class="col-sm-12" style="height: 55px; text-align: center;"  id="titre">Identification</div>
+              </div>
+              <div class="row">
+                  <progress id="montre" class="col-sm-12" style="display: none; height: 5px;" role="progressbar" min=0> </progress>
+              </div>
+            </div>
+
+
+            <div class="col-sm-5" style="height: 60px; background-size: 100% 100%; text-align: center;"  id="admin">  </div>
+            <div class="col-sm-2" style="text-align: right;">                
+                <div class="row" style="text-align: right;">
+                  <img id="recule" src="static\\img\\recule.png" class="pilotage"/>
+                  <img id="recharge" src="static\\img\\recharge.png" class="pilotage"/>
+                  <img id="pause" src="static\\img\\pause.png" class="pilotage"/>
+                  <img id="avance" src="static\\img\\avance.png" class="pilotage"/>
+                  
+                  <img id="maintenance" src="static\\img\\maintenance.png" title="Active / désactive la maintenance" class="pilotage"/>
+                </div>
+                <div class="row" style="text-align: right;">
+                  <a target="_blank"href="http://computerherve:2020/administration"><img title="Affiche la page d'administration" class="maint pilotage" src="static\\img\\go_maintenance.png" alt="Maintenance"/></a>
+                  <img id="toutesLesPages" src="static\\img\\toutes.png" class="maint pilotage" title="Active l'affichage de toutes les pages"/>
+                  <img id="stopPage" src="static\\img\\stop.png" class="mainte pilotage" title="Stop l'affichage de la page en cours"/>
+                  <img id="ampoule" src="static\\img\\ampoule.gif" style="visibility: hidden;"  class="mainte pilotage" title="Je bosse, ben si"/>
+                </div>
+              </div>
+            </div>
+          </div>
+        <div id="leFond">
+          <img id="fond" draggable="false" />
+        </div>
+        
+    </body>
+</html>
+
+<!-- ###################################################################################
+                                boite de dialogue => Identification
+        #################################################################################### -->  
+        <form enctype="multipart/form-data" method="post" id="identificationModal" class="modal">        
+            <div aria-labelledby="comptesModalTitle" aria-hidden="true">
+              <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h3 class="modal-title">Identification</h3>
+                    
+                  </div>
+                  <div class="modal-body">
+                    <label for="mot" class="col-sm-2 col-form-label">Identifiant :</label>
+                              <div class="col-sm-10">
+                                <input type="text" class="form-control" cols="40" rows="5" id="identifiant" name="valeur" placeholder="">                              
+                              </div>
+                    <label for="mot" class="col-sm-2 col-form-label">Mot de passe :</label>
+                              <div class="col-sm-10">
+                                <input type="password" class="form-control" cols="40" rows="5" id="motDePasse" name="valeur" placeholder="">                              
+                              </div>
+                  </div>
+                  <div class="modal-footer">                  
+                    <h2>
+                      <button type="button" style="float: right;" class="btnh btn-primary" id="ok">Enregistrer</button>
+                      <button type="button" style="float: right;" class="btnh btn-primary" id="annuler">Annuler</button>
+                    </h2>
+                  </div>
+                </div> 
+              </div>
+            </div>
+        </form>
+<!-- ###################################################################################
+                                boite de dialogue => Nouveau mot de passe
+        #################################################################################### -->  
+        <form enctype="multipart/form-data" method="post" id="nouveauMotDePasseModal" class="modal">        
+            <div aria-labelledby="nouveauMDPModalTitle" aria-hidden="true">
+              <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h3 class="modal-title">Nouveau mot de passe</h3>
+                    <div id="login"></div>
+                  </div>
+                  <div class="modal-body">
+                    <label for="mot" class="col-sm-2 col-form-label">Mot de passe :</label>
+                              <div class="col-sm-10">
+                                <input type="password" class="form-control" cols="40" rows="5" id="nouvMdp0" name="valeur" placeholder="">                              
+                              </div>
+                    <label for="mot" class="col-sm-2 col-form-label">Nouveau mot de passe :</label>
+                              <div class="col-sm-10">
+                                <input type="password" class="form-control" cols="40" rows="5" id="nouvMdp1" name="valeur" placeholder="">                              
+                              </div>
+                    <label for="mot" class="col-sm-4 col-form-label">Confirmer nouveau mot de passe :</label>
+                              <div class="col-sm-10">
+                                <input type="password" class="form-control" cols="40" rows="5" id="nouvMdp2" name="valeur" placeholder="">                              
+                              </div>
+                  </div>
+                  <div class="modal-footer">                  
+                    <h2>
+                      <button type="button" style="float: right;" class="btnh btn-primary" id="okNouveauMotDePasse">Enregistrer</button>
+                    </h2>
+                  </div>
+                </div> 
+              </div>
+            </div>
+        </form>
+
+        <!-- ###################################################################################
+                                boite de dialogue => Nouveau moyen
+        #################################################################################### -->  
+        <form enctype="multipart/form-data" method="post" id="nouvelleMachine" class="modal">        
+          <div aria-labelledby="nouvelleMachineModalTitle" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h3 class="modal-title" id="machineTitre">Nouveau moyen</h3>
+                </div>
+                <div class="modal-body">
+
+                  <div class="row">
+                    <div class="col-sm-8">
+                      <label for="mot" class="col-form-label">Nom du moyen (banc de test) :</label>
+                                <div>
+                                  <input type="text" class="form-control" cols="40" rows="5" id="machineNom" name="valeur" placeholder="">
+                                </div>
+                                
+                      <label for="mot" class=" col-form-label">Détail :</label>
+                                <div>
+                                  <input type="text" class="form-control" cols="40" rows="5" id="machineDetail" name="valeur" placeholder="">
+                                </div>
+                    </div>
+                    <div class="col-sm-4" id="aspectMoyen" style="background-size: 100% 100%;">
+                      <button type="button" class="idemmasque" id="idemHaut" style="display: none; position: absolute; top: 0px; left: 30%;">Idem en haut</button>
+                      <button type="button" class="idemmasque" id="idemGauche" style="display: none; position: absolute; left: 0px; top: 45%;">Idem à gauche</button>
+                      <button type="button" class="idemmasque" id="idemDroit" style="display: none; position: absolute; right: 0px; top: 45%;">Idem à droite</button>
+                      <button type="button" class="idemmasque" id="idemBas" style="display: none; position: absolute; bottom: 0px; left: 30%;">Idem en bas</button>
+                    </div>
+                  </div>
+                  
+                  <div class="row">
+                    <div class="col-sm-8">
+                      <label for="mot" class="col-sm-3 col-form-label">Secteur :</label>
+                          <FORM class="col-sm-9">
+                              <SELECT name="nom" size="6" id="menuListeSecteurs">
+                                  <OPTION>HERVE</OPTION>
+                              </SELECT>
+                          </FORM>
+                    </div>
+                      <div class="col-sm-4">
+                        <div class="row">
+                          <div class="col-sm-6">
+                            <label for="mot" class="col-form-label">Couleur du moyen :</label>
+                            <input type="color" id="machineCouleur" name="valeur" placeholder="">
+                          </div>
+                          <div class="col-sm-6">
+                              <input type="checkbox" id="moyenPasImage" name="valeur" placeholder=""> Pas d'image<br>
+                              <input type="checkbox" id="moyenPasCouleur" name="valeur" placeholder=""> Transparent<br>
+                              <input type="checkbox" id="moyenPasTitre" name="valeur" placeholder=""> Pas de titre<br>
+                              <input type="checkbox" id="moyenAfficheInfos" name="valeur" placeholder=""> Affiche infos<br>
+                          </div>
+                        </div>
+                        <label>Image de fond</label>
+                        <div id="listImagesMoyens" style="width: 100%; height: 60px; overflow: auto;">
+                        </div>
+                    </div>
+                  </div>        
+                  <div class="row">
+                      <div class="col-sm-6">
+                          <label for="mot" class="col-sm-4 col-form-label">PC (Hostname) :</label>
+                          <input type="text" class="form-control" id="Hostname" name="valeur" placeholder="">
+                          
+                          <label for="mot" class="col-sm-4 col-form-label">Détail :</label>
+                          <input type="text" class="form-control" id="Detail" name="valeur" placeholder="">
+                          <button type="button" style="float: left;" class="btnh btn-secondary" id="effacePCPourMoyen">Efface</button>
+                          <button type="button" style="float: right;" class="btnh btn-secondary" id="ajoutePCAuMoyen">Ajoute >></button>
+                      </div>
+
+                      <div class="col-sm-6">
+                        <label for="mot" class="col-sm-4 col-form-label">PC du moyen :</label>
+                        <button type="button" style="float: right;" class="btnh btn-secondary" id="montePCDuMoyen">H</button>
+                          <FORM class="col-sm-12">
+                            <SELECT name="nom" size="4" id="menuListePC">
+                                <OPTION>A</OPTION>
+                            </SELECT>
+                        </FORM>
+                        <button type="button" style="float: left;" class="btnh btn-secondary" id="supprimePCAuMoyen"><< Supprime</button>
+                        <button type="button" style="float: right;" class="btnh btn-secondary" id="descendPCDuMoyen">B</button>
+                      </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                  <h6>
+                    <button type="button" style="float: left;" class="btnh btn-primary" id="supprimerMoyen">Supprime le moyen</button>
+                  </h6>
+                  <h4>
+                    <button type="button" style="float: left;" class="btnh btn-primary" id="annulerNouvelleMachine">Annuler</button>
+                  </h4>
+                  <h2>
+                    <button type="button" style="float: right;" class="btnh btn-primary" id="okNouvelleMachine">Enregistrer</button>
+                  </h2>
+                </div>
+              </div> 
+            </div>
+          </div>
+      </form>
+        <!-- ###################################################################################
+                                boite de dialogue => Nouveau PC (PC = pièce unique)
+        #################################################################################### -->  
+        <form enctype="multipart/form-data" method="post" id="nouveauPC" class="modal">        
+          <div aria-labelledby="nouveauPCModalTitle" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h3 class="modal-title" id="PCTitre">Nouvel objet</h3>
+                </div>
+                <div class="modal-body">
+
+                  <div class="row">
+                    <div class="col-sm-10">
+                      <label for="mot" class="col-form-label">Nom de l'objet :</label>
+                                <div class="col-sm-12">
+                                  <input type="text" class="form-control" cols="40" rows="5" id="PCNom" name="valeur" placeholder="">                              
+                                </div>
+                      <label for="mot" class="col-form-label">Détail :</label>
+                                <div class="col-sm-12">
+                                  <input type="list" class="form-control" cols="40" rows="5" id="PCDetail" name="valeur" placeholder="">                              
+                                </div> 
+                    </div>
+                    <div class="col-sm-2" id="aspectPC" style="background-size: 100% 100%;"></div>
+                  </div>
+                  
+                  <div class="row">
+
+                    <div class="col-sm-6">
+                      <label for="mot" class="col-sm-3 col-form-label">Secteur :</label>
+                          <FORM class="col-sm-9">
+                              <SELECT name="nom" size="1" id="PCMenuListeSecteurs">
+                                  <OPTION>HERVE</OPTION>
+                              </SELECT>
+                          </FORM>
+                    </div>
+                    
+                    <div class="col-sm-6">
+                      <label for="mot" class="col-sm-3 col-form-label">Type dobjet :</label>
+                          <FORM class="col-sm-9">
+                              <SELECT name="nom" size="1" id="menuListeObjets">
+                                  <OPTION>Deconchat</OPTION>
+                              </SELECT>
+                          </FORM>
+                    </div>
+
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <h6>
+                    <button type="button" style="float: left;" class="btnh btn-primary" id="supprimerPC">Supprime l'objet</button>
+                  </h6>
+                  <h4>
+                    <button type="button" style="float: left;" class="btnh btn-primary" id="annulerNouveauPC">Annuler</button>
+                  </h4>
+                  <h2>
+                    <button type="button" style="float: right;" class="btnh btn-primary" id="okNouveauPC">Enregistrer</button>
+                  </h2>
+                </div>
+              </div> 
+            </div>
+          </div>
+      </form>

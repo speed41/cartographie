@@ -1,0 +1,62 @@
+{
+    "Types": [
+        {
+            "ID": "DansFichierTxt",
+            "Nom": "Hostname dans un fichier texte",
+            "Détail": "Le hostname de l'ordinateur est dans le fichier type texte (champ dossier et fichier) : ~dossier~\\~fichier~"
+        },{
+            "ID": "DansFichierXls",
+            "Nom": "Hostname dans un fichier Excel",
+            "Détail": "Le hostname de l'ordinateur est dans le fichier Excel (champ dossier et fichier) : ~dossier~\\~fichier~"
+        },
+        {
+            "ID": "FichierPresent",
+            "Nom": "Hostname dans le nom d'un fichier",
+            "Détail": "Le Hostname de l'ordinateur doit apparaitre dans un nom de fichier du dossier ~dossier~ ayant aussi l'extention du champ (fichier) :  ~extention~"
+        }
+    ],
+    "Calculs": [
+        {
+            "ID": "EcartAnnee",
+            "Nom": "Ecart en années",
+            "Détail": "Le champ récupéré ou la date du fichier (le plus récent) est comparée à l'année actuelle",
+            "UtiliseAvec": "FichierPresent;DansFichierTxt;DansFichierXls",
+            "Affiche": "Image"
+        },
+        {
+            "ID": "EcartMois",
+            "Nom": "Ecart en mois",
+            "Détail": "Le champ récupéré ou la date du fichier (le plus récent) est comparée en mois avec la date du jour",
+            "UtiliseAvec": "FichierPresent;DansFichierTxt;DansFichierXls",
+            "Affiche": "Image"
+        },
+        {
+            "ID": "EcartJour",
+            "Nom": "Ecart en jours",
+            "Détail": "Le champ récupéré ou la date du fichier (le plus récent) est comparée en jours avec la date du jour",
+            "UtiliseAvec": "FichierPresent;DansFichierTxt;DansFichierXls",
+            "Affiche": "Image"
+        },        
+        {
+            "ID": "Valeur",
+            "Nom": "Lit une valeur dans un fichier",
+            "Détail": "La 1° valeur lu dans le fichier est comparée aux valeur A, B et C de l'onglet Valeurs",
+            "UtiliseAvec": "DansFichierTxt;DansFichierXls",
+            "Affiche": "Couleur"
+        },
+        {
+            "ID": "Contient",
+            "Nom": "Utilise texte d'un fichier pour afficher images",
+            "Détail": "Un champ texte est récupéré d'un fichier texte, il est utilisé pour sélectionner l'image de la liste [contient] contenant ce texte",
+            "UtiliseAvec": "DansFichierTxt;DansFichierXls",
+            "Affiche": ""
+        },
+        {
+            "ID": "Occurences",
+            "Nom": "Nombre d'occurence",
+            "Détail": "Compte le nombre de fois ou le hostname est rencontré",
+            "UtiliseAvec": "FichierPresent;DansFichierTxt;DansFichierXls",
+            "Affiche": "Couleur"
+        }
+    ]    
+}

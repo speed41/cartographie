@@ -1,0 +1,287 @@
+<html>
+    <head>
+        <style type="text/css">
+            @import url(/static/css/bootstrap.css);
+        </style>
+        <title id="cartoTitle" class="">CartoGraphie (Banque)</title>
+        <link rel="stylesheet" href="static\css\bootstrap.css" type="text/css" charset="utf-8" />
+        <link rel="stylesheet" href="static\css\global.css" type="text/css" charset="utf-8" />
+        
+        <script src="static\js\jquery-3.3.1.min.js"></script>
+        <script src="static\js\jquery.form.js"></script>
+        <script src="static\js\popper.js"></script>
+        <script src="static\js\bootstrap.min.js"></script>
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="static\js\images.js"></script>
+    </head>
+    <body style="color:#FFFFFF; text-align: center;" id="corps">
+        <h1>
+            <br>Banque d'images
+        </h1>
+        <button type="button" class="btn-secondary" style="text-align: right;" ID="rafraichit">Rafraichir</button>
+        <div class="row" id="lesImages">
+            <!--###############################################################################################-->
+            <div class="col-sm-2 fondDiv"  style="background-color: rgb(207, 252, 252); color: black;">
+                <h3>Fonds cartes</h3>
+                <div id="imagesFonds" style="overflow: scroll;">
+
+                </div>
+                <div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <img id="fondImage" style="width: 100px; height: 100px;">
+                        </div>
+                        <div class="col-sm-6">
+                            <br><br><br>
+                            <button type="button" class="btn-primary" style="text-align: left;" ID="fondSupprime">Supprime le fichier</button><br>
+                        </div>
+                    </div>
+                    <br>
+                    <button type="button" class="btn-primary" style="text-align: left;" ID="fondImporte">Importer une image</button><br>
+                </div>
+            </div>
+            <!--###############################################################################################-->
+            <div class="col-sm-2 fondDiv"  style="background-color: azure; color: black;">
+                <h3>Objets</h3>
+                <div id="imagesObjets" style="overflow: scroll;">
+                
+                </div>
+                <div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <img id="objetImage" style="width: 100px; height: 100px;">
+                        </div>
+                        <div class="col-sm-6">
+                            <br><br><br>
+                            <button type="button" class="btn-primary" style="text-align: left;" ID="objetSupprime">Supprime le fichier</button><br>
+                        </div>
+                    </div>
+                    <br>
+                    <button type="button" class="btn-primary" style="text-align: left;" ID="objetImporte">Importer une image</button><br>
+                </div>
+            </div>
+            <!--###############################################################################################-->
+            <div class="col-sm-2 fondDiv"  style=" background-color: rgb(247, 226, 226); color: black;">
+                <h3>Indicateurs</h3>
+                <div id="imagesIndicateurs" style="overflow: scroll;">
+                
+                </div>                
+                <div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <img id="indicateurImage" style="width: 100px; height: 100px;">
+                        </div>
+                        <div class="col-sm-6">
+                            <br><br><br>
+                            <button type="button" class="btn-primary" style="text-align: left;" ID="indicateurSupprime">Supprime le fichier</button><br>
+                        </div>
+                    </div>
+                    <br>
+                    <button type="button" class="btn-primary" style="text-align: left;" ID="indicateursImporte">Importer une image</button><br>
+                </div>
+            </div>
+            <!--###############################################################################################-->
+            <div class="col-sm-2 fondDiv"  style=" background-color: rgb(211, 252, 188); color: black;">
+                <h3>Fonds écrans</h3>
+                <div id="imagesFondsEcran" style="overflow: scroll;">
+                
+                </div>
+                <div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <img id="imagesImage" style="width: 100px; height: 100px;">
+                        </div>
+                        <div class="col-sm-6">
+                            <br><br><br>
+                            <button type="button" class="btn-primary" style="text-align: left;" ID="fondEcranSupprime">Supprime le fichier</button><br>
+                            <button type="button" class="btn-primary" style="text-align: left;" ID="fondEcranApplique">Applique</button><br>
+                        </div>
+                    </div>
+                    <br>
+                    <button type="button" class="btn-primary" style="text-align: left;" ID="fondEcranImporte">Importer une image</button><br><br>
+                </div>
+            </div>
+        <!--###############################################################################################-->
+            <div class="col-sm-2 fondDiv"  style=" background-color: rgb(248, 255, 187); color: black;">
+                <h3>Fonds moyens</h3>
+                <div id="imagesFondsMoyens" style="overflow: scroll;">
+                
+                </div>
+                <div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <img id="imagesMoyen" style="width: 100px; height: 100px;">
+                        </div>
+                        <div class="col-sm-6">
+                            <br><br><br>
+                            <button type="button" class="btn-primary" style="text-align: left;" ID="fondMoyenSupprime">Supprime le fichier</button><br>
+                        </div>
+                    </div>
+                    <br>
+                    <button type="button" class="btn-primary" style="text-align: left;" ID="fondMoyenImporte">Importer une image</button><br><br>
+                </div>
+            </div>
+            <!--###############################################################################################-->
+            <div class="col-sm-2 fondDiv"  style=" background-color: rgb(247, 186, 151); color: black;">
+                <h3>Logos</h3>
+                <div id="imagesLogos" style="overflow: scroll;">
+                
+                </div>
+                <div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <img id="logoImage" style="width: 100px; height: 50px;">
+                        </div>
+                        <div class="col-sm-6">
+                            <br><br><br>
+                            <button type="button" class="btn-primary" style="text-align: left;" ID="logoSupprime">Supprime le fichier</button><br>
+                        </div>
+                    </div>
+                    <br>
+                    <button type="button" class="btn-primary" style="text-align: left;" ID="logoImporte">Importer une image</button><br><br>
+                </div>
+            </div>
+            <!--###############################################################################################-->
+        </div>
+    </body>
+</html>
+
+
+    <!-- ###################################################################################
+                                boite de dialogue => Image Fond carte
+        #################################################################################### -->  
+        <form action="/postgoImageCarte" style="width: 50%; left: 25%" enctype="multipart/form-data" method="post" id="carteSauve" class="modal">
+            <div aria-labelledby="comptesModalTitle" aria-hidden="true">
+              <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h3 class="modal-title">Ajoute Image</h3>
+                  </div>
+                  <div class="modal-body">
+                        <input type="file" name="fil" />
+                  </div>
+                  <div class="modal-footer">
+                    <h2>
+                      <button type="button" class="btnh btn-primary" id="carteAnnuler">Annuler</button>
+                      <button type="submit" class="btnh btn-primary" value="Upload" name="carteOk">Importe l'image choisie</button>
+                    </h2>
+                  </div>
+                </div> 
+              </div>
+            </div>
+        </form>
+    <!-- ###################################################################################
+                                boite de dialogue => Image Objets
+        #################################################################################### -->  
+        <form action="/postgoImageObjet" style="width: 50%; left: 25%" enctype="multipart/form-data" method="post" id="objetSauve" class="modal">
+            <div aria-labelledby="comptesModalTitle" aria-hidden="true">
+                <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h3 class="modal-title">Ajoute Image</h3>
+                    </div>
+                    <div class="modal-body">
+                        <input type="file" name="fil" />
+                    </div>
+                    <div class="modal-footer">
+                    <h2>
+                        <button type="button" class="btnh btn-primary" id="objetAnnuler">Annuler</button>
+                        <button type="submit" class="btnh btn-primary" value="Upload" name="objetOk">Importe l'image choisie</button>
+                    </h2>
+                    </div>
+                </div> 
+                </div>
+            </div>
+        </form>
+    <!-- ###################################################################################
+                                boite de dialogue => Image indicateurs
+        #################################################################################### -->  
+        <form action="/postgoImageIndicateur" style="width: 50%; left: 25%" enctype="multipart/form-data" method="post" id="indicateurSauve" class="modal">
+            <div aria-labelledby="comptesModalTitle" aria-hidden="true">
+              <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h3 class="modal-title">Ajoute Image</h3>
+                  </div>
+                  <div class="modal-body">
+                        <input type="file" name="fil" />
+                  </div>
+                  <div class="modal-footer">
+                    <h2>
+                      <button type="button" class="btnh btn-primary" id="indicateurAnnuler">Annuler</button>
+                      <button type="submit" class="btnh btn-primary" value="Upload" name="indicateurOk">Importe l'image choisie</button>
+                    </h2>
+                  </div>
+                </div> 
+              </div>
+            </div>
+        </form>
+        <!-- ###################################################################################
+                                    boite de dialogue => Image Fond Ecran
+            #################################################################################### -->  
+            <form action="/postgoImageEcran" style="width: 50%; left: 25%" enctype="multipart/form-data" method="post" id="ecranSauve" class="modal">
+                <div aria-labelledby="comptesModalTitle" aria-hidden="true">
+                  <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h3 class="modal-title">Ajoute Image</h3>
+                      </div>
+                      <div class="modal-body">
+                            <input type="file" name="fil" />
+                      </div>
+                      <div class="modal-footer">
+                        <h2>
+                          <button type="button" class="btnh btn-primary" id="ecranAnnuler">Annuler</button>
+                          <button type="submit" class="btnh btn-primary" value="Upload" name="ecranOk">Importe l'image choisie</button>
+                        </h2>
+                      </div>
+                    </div> 
+                  </div>
+                </div>
+            </form>
+            <!-- ###################################################################################
+                                        boite de dialogue => Image Moyens
+                #################################################################################### -->  
+                <form action="/postgoImageMoyen" style="width: 50%; left: 25%" enctype="multipart/form-data" method="post" id="moyenSauve" class="modal">
+                    <div aria-labelledby="comptesModalTitle" aria-hidden="true">
+                      <div class="modal-dialog modal-lg" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h3 class="modal-title">Ajoute Image</h3>
+                          </div>
+                          <div class="modal-body">
+                                <input type="file" name="fil" />
+                          </div>
+                          <div class="modal-footer">
+                            <h2>
+                              <button type="button" class="btnh btn-primary" id="moyenAnnuler">Annuler</button>
+                              <button type="submit" class="btnh btn-primary" value="Upload" name="moyenOk">Importe l'image choisie</button>
+                            </h2>
+                          </div>
+                        </div> 
+                      </div>
+                    </div>
+                </form>
+                <!-- ###################################################################################
+                                            boite de dialogue => Image logos
+                    #################################################################################### -->  
+                    <form action="/postgoImageLogo" style="width: 50%; left: 25%" enctype="multipart/form-data" method="post" id="logoSauve" class="modal">
+                        <div aria-labelledby="comptesModalTitle" aria-hidden="true">
+                          <div class="modal-dialog modal-lg" role="document">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h3 class="modal-title">Ajoute Image</h3>
+                              </div>
+                              <div class="modal-body">
+                                    <input type="file" name="fil" />
+                              </div>
+                              <div class="modal-footer">
+                                <h2>
+                                  <button type="button" class="btnh btn-primary" id="logoAnnuler">Annuler</button>
+                                  <button type="submit" class="btnh btn-primary" value="Upload" name="logoOk">Importe l'image choisie</button>
+                                </h2>
+                              </div>
+                            </div> 
+                          </div>
+                        </div>
+                    </form>

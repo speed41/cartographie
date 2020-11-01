@@ -1,0 +1,151 @@
+{
+    "objet": [
+        {
+            "Nom": "DT3075",
+            "Détail": "Paternator",
+            "Secteur": "Perfo",
+            "type": "combine",
+            "couleur": "ffff00",
+            "x0": "77.81954887218046",
+            "y0": "5.799648506151142",
+            "x1": "92.66917293233082",
+            "y1": "26.889279437609844",
+            "objets": [
+                {
+                    "Nom": "FRBLOCTP3075A",
+                    "FormatObjet": "Ordinateur",
+                    "Secteur": "Perfo",
+                    "Détail": "",
+                    "x": 1968,
+                    "y": 1968
+                }
+            ]
+        },
+        {
+            "Nom": "DT2194",
+            "Détail": "Gen 5",
+            "Secteur": "Perfo",
+            "type": "combine",
+            "couleur": "ffff00",
+            "x0": "77.63157894736842",
+            "y0": "30.755711775043938",
+            "x1": "92.29323308270678",
+            "y1": "52.899824253075565",
+            "objets": [
+                {
+                    "Nom": "FRBLOCTP2194A",
+                    "FormatObjet": "Ordinateur",
+                    "Secteur": "Perfo",
+                    "Détail": "",
+                    "x": 1968,
+                    "y": 1968
+                }
+            ]
+        },
+        {
+            "Nom": "6027",
+            "type": "simple",
+            "Secteur": "6027",
+            "FormatObjet": "Téléphone",
+            "Détail": "",
+            "x": "86.34146341463415",
+            "y": "56.10034207525656"
+        },
+        {
+            "Nom": "DT2978",
+            "Détail": "Sonplas Tipleak",
+            "Secteur": "Perfo",
+            "type": "combine",
+            "couleur": "ffff00",
+            "x0": "63.1578947368421",
+            "y0": "64.32337434094903",
+            "x1": "96.42857142857143",
+            "y1": "78.38312829525483",
+            "objets": [
+                {
+                    "Nom": "FRBLOCTP2978A",
+                    "FormatObjet": "Ordinateur",
+                    "Secteur": "Perfo",
+                    "Détail": "",
+                    "x": 1968,
+                    "y": 1968
+                },
+                {
+                    "Nom": "FRBLOCTP2978C",
+                    "FormatObjet": "Ordinateur",
+                    "Secteur": "Perfo",
+                    "Détail": "",
+                    "x": 1968,
+                    "y": 1968
+                }
+            ]
+        },
+        {
+            "Nom": "DT3125",
+            "Détail": "CPS",
+            "Secteur": "Perfo",
+            "type": "combine",
+            "couleur": "ffff00",
+            "image": "",
+            "pasDeTitre": "false",
+            "afficheInfos": "true",
+            "x0": "49.064039408866996",
+            "y0": "9.96309963099631",
+            "x1": "63.05418719211823",
+            "y1": "25.830258302583026",
+            "objets": []
+        },
+        {
+            "Nom": "DT2711",
+            "Détail": "Vulcatherme",
+            "Secteur": "Perfo",
+            "type": "combine",
+            "couleur": "ffff00",
+            "image": "vulcatherm.jpg",
+            "pasDeTitre": "true",
+            "afficheInfos": "true",
+            "x0": "66.79802955665025",
+            "y0": "40.959409594095945",
+            "x1": "77.73399014778325",
+            "y1": "52.2140221402214",
+            "objets": []
+        },
+        {
+            "Nom": "DT3196",
+            "Détail": "VT SHED",
+            "Secteur": "Perfo",
+            "type": "combine",
+            "couleur": "ffff00",
+            "image": "undefined",
+            "pasDeTitre": "false",
+            "afficheInfos": "true",
+            "x0": "48.86699507389163",
+            "y0": "29.704797047970477",
+            "x1": "63.8423645320197",
+            "y1": "52.5830258302583",
+            "objets": []
+        },
+        {
+            "Nom": "W1024",
+            "type": "simple",
+            "Secteur": "W1024",
+            "FormatObjet": "Borne Wifi",
+            "Détail": "",
+            "x": "63.627819548872175",
+            "y": "25.65905096660808"
+        },
+        {
+            "Nom": "DT3193",
+            "Détail": "Conteneur DENIOS",
+            "Secteur": "Perfo",
+            "type": "combine",
+            "couleur": "a8a8a8",
+            "image": "",
+            "x0": "52.443609022556394",
+            "y0": "81.37082601054482",
+            "x1": "72.74436090225564",
+            "y1": "98.06678383128296",
+            "objets": []
+        }
+    ]
+}

@@ -1,0 +1,27 @@
+{
+    "comptes": [
+        {
+            "Nom": "Administrateur",
+            "MotDePasse": "a",
+            "Pages": "defaut|Clément|",
+            "Etat": "actif",
+            "Admin": "true",
+            "Login": "Administrateur"
+        },
+        {
+            "Nom": "Utilisateur",
+            "MotDePasse": "u",
+            "Pages": "defaut|Clément|Acronis|",
+            "Etat": "actif",
+            "Admin": "false",
+            "Login": "Utilisateur"
+        },
+        {
+            "Nom": "totio",
+            "MotDePasse": "t",
+            "Pages": "GDI T0|",
+            "Etat": "actif",
+            "Admin": "true"
+        }
+    ]
+}

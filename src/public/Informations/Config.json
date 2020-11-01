@@ -1,0 +1,63 @@
+{
+    "Timer": "20",
+    "ping": false,
+    "InfosSecteurs": "C:\\cartographie\\infos_Secteurs",
+    "BackgroundImage": "background-2079406_1280.jpg",
+    "Logo": "",
+    "PoliceCouleur": "0008ff",
+    "hostnameReplaceParEtoile": [
+        {
+            "texte": "frbloct"
+        },
+        {
+            "texte": "frblo"
+        },
+        {
+            "texte": "fr"
+        }
+    ],
+    "Couleur": "66dfe1",
+    "Moyen": {
+        "Nom": "{Nom}",
+        "Bulle": "Nom :<tab>{Nom}<br>Secteur :<tab>{Secteur}<br>Détail :<tab>{Détail}",
+        "Couleur": "808080",
+        "Titre": {
+            "Transparent": false,
+            "Epaisseur": "0",
+            "Couleur": "78f28c",
+            "Angle": "40",
+            "PoliceTaille": "16",
+            "PoliceCouleur": "ffffff"
+        },
+        "PC": {
+            "Couleur": "d3cfcf",
+            "Hostname": {
+                "Transparent": false,
+                "Epaisseur": "1",
+                "Couleur": "000000",
+                "Angle": "2",
+                "PoliceTaille": "10",
+                "PoliceCouleur": "000000"
+            }
+        }
+    },
+    "Objet": {
+        "Nom": "{Nom}",
+        "Bulle": "Nom :<tab>{Nom}<br>Secteur :<tab>{Secteur}<br>Détail :<tab>{Détail}",
+        "Taille": "40",
+        "Couleur": "d9d9d9",
+        "Hostname": {
+            "Transparent": false,
+            "Epaisseur": "1",
+            "Couleur": "000000",
+            "Angle": "2",
+            "PoliceTaille": "9",
+            "PoliceCouleur": "000000"
+        }
+    },
+    "EnTete": {
+        "Couleur": "b7e1e1",
+        "PoliceTaille": "28",
+        "PoliceCouleur": "ff0000"
+    }
+}

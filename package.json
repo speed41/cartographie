@@ -1,0 +1,23 @@
+{
+  "name": "Cartographie",
+  "version": "1.0.0",
+  "description": "Cartographi des bancs",
+  "main": "./src/index.js",
+  "scripts": {
+    "dev": "nodemon"
+  },
+  "author": "Hervé Deconchat",
+  "license": "ISC",
+  "dependencies": {
+    "babel-preset-stage-3": "^6.24.1",
+    "body-parser": "^1.19.0",
+    "express": "^4.15.2",
+    "formidable": "^1.2.2",
+    "git": "^0.1.5",
+    "nodemon": "^2.0.2",
+    "npm": "^6.13.4",
+    "ping": "^0.2.3",
+    "serialize-javascript": "^3.1.0",
+    "socket.io": "^2.3.0"
+  }
+}

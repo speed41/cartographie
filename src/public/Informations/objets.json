@@ -1,0 +1,39 @@
+{
+    "lesObjets": [
+        {
+            "Nom": "Portable",
+            "Détail": "Ordinateur portable mobile (zone stokage)",
+            "Format": "image   titre",
+            "Image": "portable.png",
+            "PC": true
+        },
+        {
+            "Nom": "Ordinateur",
+            "Détail": "Ordinateur fixe ou portable",
+            "Format": "image   titre",
+            "Image": "ordinateur.png",
+            "PC": true
+        },
+        {
+            "Nom": "Téléphone",
+            "Détail": "Indication d'un téléphone locale",
+            "Format": "titre",
+            "Image": "telephone.gif",
+            "PC": false
+        },
+        {
+            "Nom": "Borne Wifi",
+            "Détail": "Localisation d'une borne Wifi",
+            "Format": "image",
+            "Image": "WIFI.gif",
+            "PC": false
+        },
+        {
+            "Nom": "Baie",
+            "Détail": "Switchs",
+            "Format": "image   titre",
+            "Image": "baie.png",
+            "PC": false
+        }
+    ]
+}
